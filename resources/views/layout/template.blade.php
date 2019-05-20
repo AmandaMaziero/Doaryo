@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('titulo')</title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('public/css/design.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('public/css/app.css') }}">
     <head>
     
     <body>
-        @extends('rodape')
+        @include('layout.cabecalho')
         @yield('conteudo')
-        @extends('cabecalho')
+        @include('layout.rodape')
     </body>
 </html>
 
