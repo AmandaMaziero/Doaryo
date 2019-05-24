@@ -1,6 +1,6 @@
 <header>
     <nav class="navbar navbar-light" style="background-color: #D484E8;">
-  <a class="navbar-brand mb-0 h1" href="#">Doáryo</a>
+  <a class="navbar-brand" href="#"><img src="{{ asset('imagens/logo_transparent.png') }}" class="col-md-6 img-fluid" alt="logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
