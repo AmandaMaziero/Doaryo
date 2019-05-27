@@ -8,19 +8,19 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-        <a class="nav-link" href="#">Página Inicial<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ asset('home') }}">Página Inicial<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-        <a class="nav-link" href="#">O que posso doar?</a>
+        <a class="nav-link" href="{{ asset('doacao') }}">O que posso doar?</a>
         </li>
         <li class="nav-item active">
-        <a class="nav-link" href="#">Instituições Parceiras</a>
+        <a class="nav-link" href="{{ asset('instituicoes/index') }}">Instituições Parceiras</a>
         </li>
         <li class="nav-item active">
-        <a class="nav-link" href="#">Contato</a>
+        <a class="nav-link" href="{{ asset('contato/index') }}">Contato</a>
         </li>
         <li class="nav-item active">
-        <a class="nav-link" href="#">Sobre Nós</a>
+        <a class="nav-link" href="{{ asset('contato/index') }}">Sobre Nós</a>
         </li>
         <form class="form-inline">
             <button class="btn btn-light" type="button">Entrar</button>
@@ -28,6 +28,7 @@
     
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Digite aqui..." aria-label="Search">
+      <br><br>
       <button class="btn btn-light my-2 my-sm-0" type="submit">Pesquisar</button>
     </form>
 </div>
