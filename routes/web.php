@@ -10,9 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/cadastro', function(){
-    return view('cadastro.index');
-});
+Route::get('/cadastro', ["uses"=>"CadastroControlador@index"]);
 
 Route::get('/carrinho', ["uses"=>"CarrinhoControlador@index"]);
 

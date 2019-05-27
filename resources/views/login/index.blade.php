@@ -19,7 +19,7 @@
             <input type="text" class="form-control" name="senha" placeholder="Insira sua senha...">
         </div>
         <div class="form-group">
-            <a href="{{ asset('cadastro') }}" class="text-decoration-none">Não possui uma conta? Cadastra-se agora!</a>
+            <a href="{{ asset('cadastro') }}" class="text-decoration-none">Não possui uma conta? Cadastre-se agora!</a>
         </div>
         <div class="form-group">
             <a href="#" class="text-decoration-none">Esqueceu a senha? Clique aqui para recuperar.</a>
