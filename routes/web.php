@@ -28,3 +28,7 @@ Route::get('/perfil', ["uses"=>"PerfilControlador@index"]);
 
 Route::get('/sobrenos', ["uses"=>"SobrenosControlador@index"]);
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

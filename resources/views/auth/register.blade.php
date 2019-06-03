@@ -16,6 +16,11 @@
                 <div class="form-group">
                     <label>Nome:</label>
                     <input type="text" class="form-control" name="nome">
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
             </div>
             <div class="col">
@@ -30,6 +35,11 @@
                 <div class="form-group">
                     <label>Email:</label>
                     <input type="email" class="form-control" name="email">
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
             </div>
             <div class="col">
@@ -44,6 +54,11 @@
                 <div class="form-group">
                     <label>Senha:</label>
                     <input type="password" class="form-control" name="email">
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
             </div>
             <div class="col">
