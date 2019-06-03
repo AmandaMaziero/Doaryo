@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layout.template')
+@section('titulo','Recuperar Senha')
 
 @section('content')
 <div class="container">
