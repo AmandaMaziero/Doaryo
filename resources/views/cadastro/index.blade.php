@@ -11,51 +11,51 @@
     <h2>Cadastre-se no sistema abaixo:</h2>
 
     <form>
-    <div class="row">  
-        <div class="col">
-            <div class="form-group">
-                <label>Nome:</label>
-                <input type="text" class="form-control" name="nome">
+        <div class="row">  
+            <div class="col">
+                <div class="form-group">
+                    <label>Nome:</label>
+                    <input type="text" class="form-control" name="nome">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Sobrenome:</label>
+                    <input type="text" class="form-control" name="sobrenome">
+                </div>
             </div>
         </div>
-        <div class="col">
-            <div class="form-group">
-                <label>Sobrenome:</label>
-                <input type="text" class="form-control" name="sobrenome">
+        <div class="row">  
+            <div class="col">
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">    
+                    <label>Data de Nascimento:</label>
+                    <input type="date" class="form-control" name="dataNasc">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">  
-        <div class="col">
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="email" class="form-control" name="email">
+        <div class="row">  
+            <div class="col">
+                <div class="form-group">
+                    <label>Senha:</label>
+                    <input type="password" class="form-control" name="email">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">    
+                    <label>Confirme sua Senha:</label>
+                    <input type="password" class="form-control" name="senha">
+                </div>
             </div>
         </div>
-        <div class="col">
-            <div class="form-group">    
-                <label>Data de Nascimento:</label>
-                <input type="date" class="form-control" name="dataNasc">
-            </div>
-        </div>
-    </div>
-    <div class="row">  
-        <div class="col">
-            <div class="form-group">
-                <label>Senha:</label>
-                <input type="password" class="form-control" name="email">
-            </div>
-        </div>
-        <div class="col">
-            <div class="form-group">    
-                <label>Confirme sua Senha:</label>
-                <input type="password" class="form-control" name="senha">
-            </div>
-        </div>
-    </div>
-    <div>
-        <button class="btn btn-light">Cadastrar</button>
-    </div>   
+        <div class="form-group">
+            <button class="btn btn-light">Cadastrar</button>
+        </div>   
     </form>
 </div>
 

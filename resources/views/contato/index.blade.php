@@ -7,8 +7,24 @@
 </div>
 
 <div class="container text-center">
-    <h2>Veja abaixo as opções de doações:</h2>
+    <h2>Em caso de dúvidas, críticas ou sugestões entre em contato conosco</h2>
 
+    <form>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="text" class="form-control" name="email">
+        </div>
 
+        <div class="form-group">
+            <label>Mensagem:</label>
+            <textarea class="form-control" name="msg" cols="16" rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-light">Enviar</button>
+        </div>   
+
+    </form>
 </div>
+
 @endsection 
