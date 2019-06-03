@@ -1,5 +1,5 @@
 @extends('layout.template')
-@section('titulo','Instituições Parceiras')
+@section('titulo','Parceiras')
 
 @section('conteudo')
 <div class="container">

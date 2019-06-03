@@ -1,10 +1,10 @@
 @extends('layout.template')
-@section('titulo','Doação')
+@section('titulo','Doações')
 
 @section('conteudo')
 
 <div class="container">
-    <h1 class='display-1 text-center'>O que posso doar?</h1>
+    <h1 class='display-1 text-center'>Doações</h1>
 </div>
 
 <div class="container text-center">
