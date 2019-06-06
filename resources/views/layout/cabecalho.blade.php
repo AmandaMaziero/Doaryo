@@ -28,7 +28,7 @@
         <form class="form-inline my-2 my-lg-0">
           <div class="form-group">
             <input class="form-control mr-sm-2" type="search" placeholder="Digite aqui..." aria-label="Search">
-            <button class="btn btn-light my-2 my-sm-0" type="submit">Pesquisar</button>
+            <button class="btn btn-dark my-2 my-sm-0" type="submit">Pesquisar</button>
           </div>
         </form>
       </ul>

@@ -38,7 +38,7 @@
                 </a>
             @endif
         </div>
-            <button class="btn btn-light">Entrar</button>
+            <button class="btn btn-dark">Entrar</button>
         
     </form>
 

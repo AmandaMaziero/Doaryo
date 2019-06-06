@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="form-group">
-            <button class="btn btn-light">Cadastrar</button>
+            <button class="btn btn-dark">Cadastrar</button>
         </div>   
     </form>
 </div>

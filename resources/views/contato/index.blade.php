@@ -21,7 +21,7 @@
         </div>
 
         <div class="form-group">
-            <button class="btn btn-light">Enviar</button>
+            <button class="btn btn-dark">Enviar</button>
         </div>   
 
     </form>
