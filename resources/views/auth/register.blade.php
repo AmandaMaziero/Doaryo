@@ -53,7 +53,7 @@
             <div class="col">
                 <div class="form-group">
                     <label>Senha:</label>
-                    <input type="password" class="form-control" name="email">
+                    <input type="password" minlength="8" maxlength="16" class="form-control" name="senha">
                     @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -64,12 +64,12 @@
             <div class="col">
                 <div class="form-group">    
                     <label>Confirme sua Senha:</label>
-                    <input type="password" class="form-control" name="senha">
+                    <input type="password" minlength="8" maxlength="16" class="form-control" name="Confsenha">
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <button class="btn btn-dark">Cadastrar</button>
+             <button class="btn btn-dark">Cadastrar</button>
         </div>   
     </form>
 </div>
