@@ -1,5 +1,5 @@
 @extends('layout.template')
-@section('titulo','Doações')
+@section('titulo','Recuperar Senha')
 
 @section('conteudo')
 
@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Crie outra senha') }}</div>
+                <div class="card-header">{{ __('Recuperar Senha') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">
@@ -64,5 +64,4 @@
         </div>
     </div>
 </div>
-
-@endsection 
+@endsection
