@@ -14,13 +14,15 @@ class CreateRequisicoesTable extends Migration
     public function up()
     {
         Schema::create('requisicoes', function (Blueprint $table) {
-            $table->bigIncrements('idRequisicao');
+            $table->increments('idRequisicao');
             $table->string('Nome');
             $table->string('Quantidade');
             $table->string('Imagem');
             $table->string('Descricao');
-            $table->string('idCategoria');
-            $table->string('idInstituicao');
+            $table->integer('idCategoria')->unsigned();
+            $table->integer('idInstituicao')->unsigned();
+            $table->foreign('idCategoria')->references('idCategoria')->on('categoria');
+            $table->foreign('idInstituicao')->references('idInstituicao')->on('instituicao');
             $table->timestamps();
         });
     }

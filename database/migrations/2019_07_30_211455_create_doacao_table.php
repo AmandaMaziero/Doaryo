@@ -14,7 +14,13 @@ class CreateDoacaoTable extends Migration
     public function up()
     {
         Schema::create('doacao', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('idDoacao');
+            $table->string('Produto');
+            $table->string('DataDoacao');
+            $table->integer('idInstituicao')->unsigned();
+            $table->integer('idDoador')->unsigned();
+            $table->foreign('idInstituicao')->references('idInstituicao')->on('instituicao');
+            $table->foreign('idDoador')->references('idDoador')->on('doador');
             $table->timestamps();
         });
     }
