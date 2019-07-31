@@ -21,7 +21,13 @@
 			<tr>
 				<td>1</td>
 				<td><strong>2</strong></td>
-				<td><input type="number" name="quantdade" class="form-control"></td>
+				<td>
+					<form>
+						<div class="form-group">
+							<input type="number" name="quantdade" class="form-control">
+						</div>
+					</form>
+				</td>
 				<td>4</td>
 			</tr>
 		</tbody>
