@@ -22,6 +22,9 @@
             <li class="nav-item">
             <a class="nav-link" href="{{ asset('login') }}">Entrar</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{{ asset('perfil') }}">Perfil</a>
+            </li>
         </ul>
         
       <ul class="navbar-nav ml-auto">
