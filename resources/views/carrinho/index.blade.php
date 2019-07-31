@@ -3,12 +3,39 @@
 
 @section('conteudo')
 <div class="container">
-    <h1 class='display-1 text-center'>Carrinho Solidário</h1>
+	<h1 class='display-1 text-center'>Carrinho Solidário</h1>
 </div>
+<br>
 
 <div class="container text-center">
-    <h2>Veja abaixo as opções de doações:</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th scope="col">Imagem</th>
+				<th scope="col">Descrição</th>
+				<th scope="col">Quantidade</th>
+				<th scope="col">Instituição Solicitante</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td><strong>2</strong></td>
+				<td><input type="number" name="quantdade" class="form-control"></td>
+				<td>4</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<div class="row">
+		<div class="col-6">
+			<button class="btn btn-dark my-2 my-sm-0" type="submit">Apagar Todas</button>
+		</div>
 
-
+		<div class="col-6">
+			<button class="btn btn-dark my-2 my-sm-0" type="submit">Finalizar Doação</button>
+		</div>
+	</div>
 </div>
+
 @endsection 
