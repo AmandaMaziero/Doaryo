@@ -25,6 +25,12 @@
             <li class="nav-item">
             <a class="nav-link" href="{{ asset('perfil') }}">Perfil</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{{ asset('carrinho') }}">Carrinho Solidário</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{{ asset('requisicao') }}">Requisição</a>
+            </li>
         </ul>
         
       <ul class="navbar-nav ml-auto">
