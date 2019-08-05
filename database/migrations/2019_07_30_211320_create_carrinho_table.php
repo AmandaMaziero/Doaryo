@@ -15,10 +15,10 @@ class CreateCarrinhoTable extends Migration
     {
         Schema::create('carrinho', function (Blueprint $table) {
             $table->increments('idCarrinho');
-            $table->integer('idProduto')->unsigned();
+            $table->integer('idRequisicao')->unsigned();
             $table->integer('idDoador')->unsigned();
-            $table->foreign('idProduto')->references('idProduto')->on('Produto');
-            $table->foreign('idDoador')->references('idDoador')->on('Doador');
+            $table->foreign('idRequisicao')->references('idRequisicao')->on('requisicoes');
+            $table->foreign('idDoador')->references('idDoador')->on('doador');
             $table->timestamps();
         });
     }
