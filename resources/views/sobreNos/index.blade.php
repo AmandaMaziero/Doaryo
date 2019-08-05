@@ -15,8 +15,8 @@
     <div class="container text-center">
         <h2>Criadores:</h2>
         <div class="row">
-            <div class="col-3">
-                <div class="card" style="width: 16rem;">
+            <div class="col">
+                <div class="card" style="width: 15rem;">
                     <img src="{{ asset('imagens/amanda.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Amanda Aparecida Julio Maziero</h5>
@@ -24,8 +24,8 @@
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="card" style="width: 16rem;">
+            <div class="col">
+                <div class="card" style="width: 15rem;">
                     <img src="{{ asset('imagens/jullia.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Ana Jullia Silvério de Pontes</h5>
@@ -33,8 +33,8 @@
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="card" style="width: 16rem;">
+            <div class="col">
+                <div class="card" style="width: 15rem;">
                     <img src="{{ asset('imagens/rafael.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Rafael Leandro Damiam dos Santos</h5>
@@ -42,8 +42,8 @@
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="card" style="width: 16rem;">
+            <div class="col">
+                <div class="card" style="width: 15rem;">
                     <img src="{{ asset('imagens/rafaela.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Rafaela Toro de Oliveira Barbiere</h5>
