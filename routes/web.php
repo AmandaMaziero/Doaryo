@@ -30,11 +30,15 @@ Route::get('/instituicoes', ["uses"=>"InstituicoesControlador@index"]);
 
 Route::get('/login', ["uses"=>"LoginControlador@index"]);
 
-Route::get('/perfil', ["uses"=>"PerfilControlador@index"]);
+Route::get('/perfil', ["uses"=>"PerfilControlador@index"])->name('inst');
+
+Route::get('/perfil', ["uses"=>"PerfilControlador@index"])->name('doador');
+
+Route::get('/perfil', ["uses"=>"PerfilControlador@index"])->name('admin');
 
 Route::get('/sobrenos', ["uses"=>"SobrenosControlador@index"]);
 
 
-//Auth::routes();
+Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');

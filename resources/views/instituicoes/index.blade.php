@@ -9,19 +9,19 @@
 <div class="container text-center">
     <div class="row">
         <div class="col-3">
-            <a href='#CriancaFeliz' data-toggle="collapsing" role="button" aria-expanded="false" aria-controls="CriancaFeliz"><img src="{{ asset('imagens/CriancaFeliz1.png') }}" class="img-fluid" alt="Criança Feliz"></a>
+            <a href='#CriancaFeliz' data-toggle="collapse" role="button" aria-expanded="false" aria-controls="CriancaFeliz"><img src="{{ asset('imagens/CriancaFeliz1.png') }}" class="img-fluid" alt="Criança Feliz"></a>
         </div>
 
         <div class="col-3">
-            <a href='#AnimaisCia' data-toggle="collapsing" role="button" aria-expanded="false" aria-controls="AnimaisCia"><img src="{{ asset('imagens/AnimaisCia1.png') }}" class="img-fluid" alt="Animais e cia"></a>
+            <a href='#AnimaisCia' data-toggle="collapse" role="button" aria-expanded="false" aria-controls="AnimaisCia"><img src="{{ asset('imagens/AnimaisCia1.png') }}" class="img-fluid" alt="Animais e cia"></a>
         </div>
 
         <div class="col-3">
-            <a href='#LarAmores' data-toggle="collapsing" role="button" aria-expanded="false" aria-controls="LarAmores"><img src="{{ asset('imagens/LarAmores1.png') }}" class="img-fluid" alt="Lar dos Amores"></a>
+            <a href='#LarAmores' data-toggle="collapse" role="button" aria-expanded="false" aria-controls="LarAmores"><img src="{{ asset('imagens/LarAmores1.png') }}" class="img-fluid" alt="Lar dos Amores"></a>
         </div>
 
         <div class="col-3">
-            <a href='#CantinhoLua' data-toggle="collapsing" role="button" aria-expanded="false" aria-controls="CantinhoLua"><img src="{{ asset('imagens/CantinhoLua1.png') }}" class="img-fluid" alt="Cantinho da Lua"></a>
+            <a href='#CantinhoLua' data-toggle="collapse" role="button" aria-expanded="false" aria-controls="CantinhoLua"><img src="{{ asset('imagens/CantinhoLua1.png') }}" class="img-fluid" alt="Cantinho da Lua"></a>
         </div> 
 
     </div>

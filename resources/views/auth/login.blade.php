@@ -9,15 +9,29 @@
 
 <div class="container text-center">
     <h2>Entre no sistema abaixo:</h2>
-    <form>
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
+
         <div class="form-group">
-            <label>Email:</label>
-            <input type="email" class="form-control" name="email" placeholder="Insira seu email...">
+            <label for="email">{{ __('Email:') }}</label>
+            <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Insira seu email..." required autocomplete="email" autofocus>
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
+
         <div class="form-group">
-            <label>Senha:</label>
-            <input type="password" class="form-control" name="senha" placeholder="Insira sua senha...">
+            <label for="password">{{ __('Senha:') }}</label>
+            <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Insira sua senha..." required autocomplete="current-password">
+            @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror        
         </div>
+
         <div class="form-group row">
             <div class="container text-center">
                 <div class="form-check">
@@ -37,8 +51,9 @@
                     {{ __('Esqueceu a senha? Clique aqui para recuperar.') }}
                 </a>
             @endif
+            <br><br>
+            <button class="btn btn-dark" type="submit">{{ __('Entrar') }}</button>
         </div>
-            <button class="btn btn-dark">Entrar</button>
         
     </form>
 

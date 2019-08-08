@@ -16,14 +16,20 @@
     <div class="row">
         <div class="col-4">
             <a href='#'><img src="{{ asset('imagens/crianca.png') }}" class=" col-5 img-fluid" alt="crianças"></a>
+            <br>
+            <p>Crianças</p>
         </div>
 
         <div class="col-4">
             <a href='#'><img src="{{ asset('imagens/cachorro.png') }}" class="col-5 img-fluid" alt="animais"></a>
+            <br>
+            <p>Animais</p>
         </div>
 
         <div class="col-4">
             <a href='#'><img src="{{ asset('imagens/idoso.png') }}" class="col-5 img-fluid" alt="idosos"></a>
+            <br>
+            <p>Idosos</p>
         </div>
     </div>
 </div>
