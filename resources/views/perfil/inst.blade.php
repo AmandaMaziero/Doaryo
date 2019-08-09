@@ -11,10 +11,10 @@
 <div class="container text-center">
 
     <div class="list-group list-group-horizontal">
-        <button type="button" class="list-group-item list-group-item-action" href="#">Requisições</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Editar Perfil</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Sair da Conta</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Excluir Conta</button>
+        <a class="list-group-item list-group-item-action" href="#">Requisições</a>
+        <a class="list-group-item list-group-item-action" href="#">Editar Perfil</a>
+        <a class="list-group-item list-group-item-action" href="#">Sair da Conta</a>
+        <a class="list-group-item list-group-item-action" href="#">Excluir Conta</a>
     </div>
 </div>
 <br><br>
@@ -49,10 +49,10 @@
 
 <div class="container text-center">
     <div class="list-group list-group-horizontal">
-        <button type="button" class="list-group-item list-group-item-action" href="#">Excluir todas</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Adicionar Requisição</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Requisições Pendentes</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Doações Recebidas</button>
+        <a class="list-group-item list-group-item-action" href="#">Excluir todas</a>
+        <a class="list-group-item list-group-item-action" href="#">Adicionar Requisição</a>
+        <a class="list-group-item list-group-item-action" href="#">Requisições Pendentes</a>
+        <a class="list-group-item list-group-item-action" href="#">Doações Recebidas</a>
     </div>
 </div>
 
