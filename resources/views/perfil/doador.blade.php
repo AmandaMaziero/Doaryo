@@ -11,10 +11,10 @@
 <div class="container text-center">
 
     <div class="list-group list-group-horizontal">
-        <button type="button" class="list-group-item list-group-item-action" href="#">Doações</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Editar Perfil</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Sair da Conta</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Excluir Conta</button>
+        <button type="submit" class="list-group-item list-group-item-action" href="#">Doações</button>
+        <button type="submit" class="list-group-item list-group-item-action" href="#">Editar Perfil</button>
+        <button type="submit" class="list-group-item list-group-item-action" href="#">Sair da Conta</button>
+        <button type="submit" class="list-group-item list-group-item-action" href="#">Excluir Conta</button>
     </div>
 </div>
 <br><br>

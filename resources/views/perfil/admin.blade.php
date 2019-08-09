@@ -11,10 +11,10 @@
 <div class="container text-center">
 
     <div class="list-group list-group-horizontal">
-        <button type="button" class="list-group-item list-group-item-action" href="#">Informações do Doáryo</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Editar Perfil</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Sair da Conta</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Excluir Conta</button>
+        <a class="list-group-item list-group-item-action" href="#">Informações do Doáryo</a>
+        <a class="list-group-item list-group-item-action" href="#">Editar Perfil</a>
+        <a class="list-group-item list-group-item-action" href="#">Sair da Conta</a>
+        <a class="list-group-item list-group-item-action" href="#">Excluir Conta</a>
     </div>
 </div>
 <br><br>
@@ -22,10 +22,10 @@
 <div class="container text-center">
     <h2>Verificar:</h2>
     <div class="list-group list-group">
-        <button type="button" class="list-group-item list-group-item-action" href="#">Doadores</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Instituições</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Requisições</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Doações</button>
+        <a class="list-group-item list-group-item-action" href="#">Doadores</a>
+        <a class="list-group-item list-group-item-action" href="#">Instituições</a>
+        <a class="list-group-item list-group-item-action" href="#">Requisições</a>
+        <a class="list-group-item list-group-item-action" href="#">Doações</a>
     </div>
 </div>
 <br><br>
