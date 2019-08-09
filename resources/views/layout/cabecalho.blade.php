@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #D484E8;">
+  <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #85ffe6;">
   <div class="container">
       <a class="navbar-brand" href="/"><img src="{{ asset('imagens/Doaryo.svg') }}" class="col-md-6 img-fluid" alt="logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
