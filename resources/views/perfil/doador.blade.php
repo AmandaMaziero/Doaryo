@@ -11,10 +11,10 @@
 <div class="container text-center">
 
     <div class="list-group list-group-horizontal">
-        <button type="button" class="list-group-item list-group-item-action" href="#">Doações</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Editar Perfil</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Sair da Conta</button>
-        <button type="button" class="list-group-item list-group-item-action" href="#">Excluir Conta</button>
+        <a type="button" class="list-group-item list-group-item-action" href="#">Doações</a>
+        <a type="button" class="list-group-item list-group-item-action" href="#">Editar Perfil</a>
+        <a type="button" class="list-group-item list-group-item-action" href="{{ route('logout')}}">Sair da Conta</a>
+        <a type="button" class="list-group-item list-group-item-action" href="#">Excluir Conta</a>
     </div>
 </div>
 <br><br>

@@ -15,6 +15,14 @@
 Route::get('/', ["uses"=>"HomeControlador@index"]);
 Route::get('/home', 'HomeControlador@index')->name('home');
 
+//login
+Route::get('/login', ["uses"=>"LoginControlador@index"]);
+Route::get('/logout', function(){
+    Auth::logout();
+    return Redirect::to('login');
+ });
+
+
 
 Route::get('/cadastro', ["uses"=>"CadastroControlador@index"]);
 
@@ -28,8 +36,6 @@ Route::get('/doacao', ["uses"=>"DoacaoControlador@index"]);
 
 Route::get('/instituicoes', ["uses"=>"InstituicoesControlador@index"]);
 
-Route::get('/login', ["uses"=>"LoginControlador@index"]);
-
 Route::get('/perfil', ["uses"=>"PerfilControlador@index"])->name('inst');
 
 Route::get('/perfil', ["uses"=>"PerfilControlador@index"])->name('doador');
@@ -41,4 +47,4 @@ Route::get('/sobrenos', ["uses"=>"SobrenosControlador@index"]);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

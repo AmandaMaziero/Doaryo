@@ -4,7 +4,7 @@
 @section('conteudo')
 
 <div class="container">
-    <h1 class='display-1 text-center'>Entrar</h1>
+    <h1 class='display-1 text-center'>{{ __('Login') }}</h1>
 </div>
 
 <div class="container text-center">
@@ -13,7 +13,7 @@
         @csrf
 
         <div class="form-group">
-            <label for="email">{{ __('Email:') }}</label>
+            <label for="email">{{ __('E-Mail Address') }}</label>
             <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Insira seu email..." required autocomplete="email" autofocus>
             @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -23,7 +23,7 @@
         </div>
 
         <div class="form-group">
-            <label for="password">{{ __('Senha:') }}</label>
+            <label for="password">{{ __('Password') }}</label>
             <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Insira sua senha..." required autocomplete="current-password">
             @error('password')
                 <span class="invalid-feedback" role="alert">
@@ -37,7 +37,7 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                     <label class="form-check-label" for="remember">
-                        {{ __('Lembre-me ') }}
+                        {{ __('Remember Me') }}
                     </label>
                 </div>
             </div>
@@ -48,11 +48,11 @@
         <div class="form-group">
             @if (Route::has('password.request'))
                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                    {{ __('Esqueceu a senha? Clique aqui para recuperar.') }}
+                    {{ __('Forgot Your Password?') }}
                 </a>
             @endif
             <br><br>
-            <button class="btn btn-dark" type="submit">{{ __('Entrar') }}</button>
+            <button class="btn btn-dark" type="submit">{{ __('Login') }}</button>
         </div>
         
     </form>

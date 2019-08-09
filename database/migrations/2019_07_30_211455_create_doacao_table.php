@@ -18,9 +18,9 @@ class CreateDoacaoTable extends Migration
             $table->string('Produto');
             $table->string('DataDoacao');
             $table->integer('idInstituicao')->unsigned();
-            $table->integer('idUser')->unsigned();
+            $table->integer('id')->unsigned();
             $table->foreign('idInstituicao')->references('idInstituicao')->on('instituicao');
-            $table->foreign('idUser')->references('idUser')->on('users');
+            $table->foreign('id')->references('id')->on('users');
             $table->timestamps();
         });
     }

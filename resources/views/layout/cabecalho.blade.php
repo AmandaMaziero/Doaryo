@@ -19,15 +19,23 @@
             <li class="nav-item">
             <a class="nav-link" href="{{ asset('sobrenos') }}">Sobre Nós</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ asset('login') }}">Entrar</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ asset('perfil') }}">Perfil</a>
-            </li>
+            @if (Route::has('login'))
+                @auth
+                  <li class="nav-item">
+                  <a class="nav-link" href="{{ asset('perfil') }}">Perfil</a>
+                  </li>
+                @else
+                  <li class="nav-item">
+                  <a class="nav-link" href="{{ asset('login') }}">Entrar</a>
+                  </li>
+                @endauth
+            @endif
             <li class="nav-item">
             <a class="nav-link" href="{{ asset('carrinho') }}">Carrinho Solidário</a>
             </li>
+              
+
+            
         </ul>
         
       <ul class="navbar-nav ml-auto">

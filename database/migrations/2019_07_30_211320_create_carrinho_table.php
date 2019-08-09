@@ -16,9 +16,9 @@ class CreateCarrinhoTable extends Migration
         Schema::create('carrinho', function (Blueprint $table) {
             $table->increments('idCarrinho');
             $table->integer('idRequisicao')->unsigned();
-            $table->integer('idUser')->unsigned();
+            $table->integer('id')->unsigned();
             $table->foreign('idRequisicao')->references('idRequisicao')->on('requisicoes');
-            $table->foreign('idUser')->references('idUser')->on('users');
+            $table->foreign('id')->references('id')->on('users');
             $table->timestamps();
         });
     }
