@@ -28,6 +28,8 @@ Route::get('/cadastro', ["uses"=>"RegisterController@index"]);
 Route::get('/doacao', ["uses"=>"DoacaoControlador@index"]);
 
 Route::get('/doacao/cadastro', ["uses"=>"DoacaoControlador@cadastrar"])->name('cadastro');
+
+Route::get('/doacao/editar', ["uses"=>"DoacaoControlador@editar"])->name('editar');
  
 Route::get('/doacao/requisicao', ["uses"=>"DoacaoControlador@visualizar"])->name('requisicao');
 

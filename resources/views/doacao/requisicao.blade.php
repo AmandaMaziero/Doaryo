@@ -25,6 +25,8 @@
 					<button class="btn btn-dark">Adicionar ao Carrinho</button>
 				</div> 
 			</form>
+
+			<a href="{{ asset('doacao/editar') }}" class="btn btn-dark">Editar</a>
 		</div>
 
 	</div>

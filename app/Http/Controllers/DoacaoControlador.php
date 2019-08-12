@@ -15,7 +15,7 @@ class DoacaoControlador extends Controller
     }
 
     public function editar(){
-        return view('doacao.cadastro');
+        return view('doacao.editar');
     }
 
     public function excluir(){
