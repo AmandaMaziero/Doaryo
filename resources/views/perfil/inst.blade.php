@@ -12,8 +12,8 @@
 
     <div class="list-group list-group-horizontal">
         <a class="list-group-item list-group-item-action" href="#">Requisições</a>
-        <a class="list-group-item list-group-item-action" href="#">Editar Perfil</a>
-        <a class="list-group-item list-group-item-action" href="#">Sair da Conta</a>
+        <a class="list-group-item list-group-item-action" href="{{ asset('perfil/editar') }}">Editar Perfil</a>
+        <a class="list-group-item list-group-item-action" href="{{ route('logout')}}">Sair da Conta</a>
         <a class="list-group-item list-group-item-action" href="#">Excluir Conta</a>
     </div>
 </div>

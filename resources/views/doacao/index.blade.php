@@ -33,32 +33,10 @@
                             <img src="{{ asset('imagens/doacao1.jpg') }}" class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title">Conjunto feminino de todos os tamanhos</h5>
-                                <a href="#" class="btn btn-dark">Saber mais...</a>
+                                <a href="{{ asset('doacao/requisicao') }}" class="btn btn-dark">Saber mais...</a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col">
-                        <div class="card" style="width: 15rem;">
-                            <img src="{{ asset('imagens/doacao2.jpg') }}" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Conjunto masculino tamanho 6</h5>
-                                <a href="#" class="btn btn-dark">Saber mais...</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col">
-                        <div class="card" style="width: 15rem;">
-                            <img src="{{ asset('imagens/doacao3.jpg') }}" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Conjunto masculino tamanho 3</h5>
-                                <a href="#" class="btn btn-dark">Saber mais...</a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>    
             </div>
         </div>

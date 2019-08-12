@@ -31,7 +31,7 @@
                 @endauth
             @endif
             <li class="nav-item">
-            <a class="nav-link" href="{{ asset('carrinho') }}"><i class="large material-icons" style="font-size:40px; color:black;">shopping_cart</i></a>
+            <a class="nav-link" href="{{ asset('carrinho') }}"><i class="large material-icons" style="font-size:40px; color:black;">shopping_basket</i></a>
             </li>
               
 

@@ -15,36 +15,41 @@
 Route::get('/', ["uses"=>"HomeControlador@index"]);
 Route::get('/home', 'HomeControlador@index')->name('home');
 
-//login
+//login e cadastro
 Route::get('/login', ["uses"=>"LoginControlador@index"]);
 Route::get('/logout', function(){
     Auth::logout();
     return Redirect::to('login');
  });
 
+Route::get('/cadastro', ["uses"=>"RegisterController@index"]);
 
+//doacao
+Route::get('/doacao', ["uses"=>"DoacaoControlador@index"]);
 
-Route::get('/cadastro', ["uses"=>"CadastroControlador@index"]);
+Route::get('/doacao/cadastro', ["uses"=>"DoacaoControlador@cadastrar"])->name('cadastro');
+ 
+Route::get('/doacao/requisicao', ["uses"=>"DoacaoControlador@visualizar"])->name('requisicao');
 
 Route::get('/carrinho', ["uses"=>"CarrinhoControlador@index"]);
 
-Route::get('/contato', ["uses"=>"ContatoControlador@index"]);
-
-Route::get('/doacao', ["uses"=>"DoacaoControlador@index"]);
-
-
-
-Route::get('/instituicoes', ["uses"=>"InstituicoesControlador@index"]);
-
+//perfil
 Route::get('/perfil', ["uses"=>"PerfilControlador@index"])->name('inst');
 
 Route::get('/perfil', ["uses"=>"PerfilControlador@index"])->name('doador');
 
 Route::get('/perfil', ["uses"=>"PerfilControlador@index"])->name('admin');
 
+Route::get('/perfil/editar', ["uses"=>"PerfilControlador@editar"])->name('editar');
+
+
+Route::get('/contato', ["uses"=>"ContatoControlador@index"]);
+
+Route::get('/instituicoes', ["uses"=>"InstituicoesControlador@index"]);
+
 Route::get('/sobrenos', ["uses"=>"SobrenosControlador@index"]);
 
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/', 'HomeController@index')->name('home');

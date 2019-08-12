@@ -9,7 +9,7 @@
 
 <div class="container text-center">
 	<h2>Cadastre suas requisições abaixo:</h2>
-
+<br>
 	<form>
 		<div class="row">  
 			<div class="col">
@@ -18,8 +18,7 @@
 					<input type="text" class="form-control" name="nome">
 				</div>
 			</div>
-		</div>
-		<div class="row">  
+
 			<div class="col">
 				<div class="form-group">
 					<label>Imagem</label>
@@ -34,14 +33,16 @@
 					</select>
 				</div>
 			</div>
+		</div>
+
+		<div class="row">
 			<div class="col">
 				<div class="form-group">    
 					<label>Quantidade</label>
 					<input type="number" class="form-control" name="quantidade">
 				</div>
 			</div>
-		</div>
-		<div class="row">  
+  
 			<div class="col">
 				<div class="form-group">
 					<label>Descrição:</label>
@@ -49,6 +50,7 @@
 				</div>
 			</div>
 		</div>
+<br>
 		<div class="form-group">
 			<button class="btn btn-dark">Cadastrar</button>
 		</div>   
