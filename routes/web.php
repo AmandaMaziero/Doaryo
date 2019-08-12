@@ -30,6 +30,8 @@ Route::get('/doacao', ["uses"=>"DoacaoControlador@index"]);
 Route::get('/doacao/cadastro', ["uses"=>"DoacaoControlador@cadastrar"])->name('cadastro');
 
 Route::get('/doacao/editar', ["uses"=>"DoacaoControlador@editar"])->name('editar');
+
+Route::post('/doacao/salvar', ["as"=>'doacao.salvar'], ["uses"=>"DoacaoControlador@salvar"]);
  
 Route::get('/doacao/requisicao', ["uses"=>"DoacaoControlador@visualizar"])->name('requisicao');
 

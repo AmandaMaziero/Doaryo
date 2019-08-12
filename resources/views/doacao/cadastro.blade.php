@@ -10,7 +10,8 @@
 <div class="container text-center">
 	<h2>Cadastre suas requisições abaixo:</h2>
 <br>
-	<form>
+	<form action="({{route('doacao.salvar')}}" method="POST">
+	  @csrf
 		<div class="row">  
 			<div class="col">
 				<div class="form-group">
@@ -51,9 +52,7 @@
 			</div>
 		</div>
 <br>
-		<div class="form-group">
-			<button class="btn btn-dark">Cadastrar</button>
-		</div>   
+		<button class="btn btn-dark">Cadastrar</button>
 	</form>
 </div>
 
