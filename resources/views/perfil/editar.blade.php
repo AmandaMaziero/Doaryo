@@ -52,19 +52,22 @@
                     @enderror
                 </div>
             </div>
-            
-            <div class="col">
-                <div class="form-group">
-                    <label for="password">{{ __('Type') }}</label>
-                    <input type="password" id="password" minlength="8" maxlength="16" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                    @error('Type')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            </div>
-        </div>
+            @if (Route::has('login'))
+                @auth
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="password">{{ __('Type') }}</label>
+                            <input type="password" id="password" minlength="8" maxlength="16" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            @error('Type')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                @endauth
+            @endif
+    </div>
         <div class="form-group">
              <button type="submit" class="btn btn-dark">{{ __('Editar') }}</button>
         </div>   
