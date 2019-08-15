@@ -20,9 +20,6 @@ class CreateInstituicaoTable extends Migration
             $table->string('Senha');
             $table->string('Telefone');
             $table->string('Endereco');
-            $table->string('Numero');
-            $table->string('Bairro');
-            $table->string('Cep');
             $table->timestamps();
         });
     }

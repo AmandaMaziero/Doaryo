@@ -17,5 +17,7 @@ class PerfilControlador extends Controller
     public function deletar() {
         return view('perfil.doador');
     }
+
+    //->select('column')->from('table')->where('where clause')->get();
     
 }

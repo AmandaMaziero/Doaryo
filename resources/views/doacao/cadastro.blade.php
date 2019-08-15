@@ -15,15 +15,15 @@
 		<div class="row">  
 			<div class="col">
 				<div class="form-group">
-					<label>Nome:</label>
+					<label for="nome">Nome:</label>
 					<input type="text" class="form-control" name="nome">
 				</div>
 			</div>
 
 			<div class="col">
 				<div class="form-group">
-					<label>Imagem</label>
-					<select class="form-control">
+					<label for="imagem">Imagem</label>
+					<select class="form-control" name="categoria">
 						<option selected>Escolha de acordo com a sua requisição...</option>
 						<option id="roupas">Roupas</option>
 						<option id="sapatos">Sapatos</option>
@@ -39,20 +39,20 @@
 		<div class="row">
 			<div class="col">
 				<div class="form-group">    
-					<label>Quantidade</label>
+					<label for="quantidade">Quantidade</label>
 					<input type="number" class="form-control" name="quantidade">
 				</div>
 			</div>
   
 			<div class="col">
 				<div class="form-group">
-					<label>Descrição:</label>
+					<label for="descricao">Descrição:</label>
 					<input type="text" class="form-control" name="descricao">
 				</div>
 			</div>
 		</div>
 <br>
-		<button class="btn btn-dark">Cadastrar</button>
+		<button class="btn btn-dark" type="submit">Cadastrar</button>
 	</form>
 </div>
 
