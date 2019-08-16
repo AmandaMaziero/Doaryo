@@ -3,8 +3,8 @@
 
 @section('conteudo')
 
-<div class="container">
-    <h1 class='display-1 text-center'>Perfil</h1>
+<div class="container text-center">
+<h1 class='display-1 text-center'>Excluir</h1>
 </div>
 <br>
 <div class="container text-center">
@@ -16,24 +16,12 @@
     </div>
 </div>
 <br><br>
-
-<div class="container text-center">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th scope="col">Produto Doado</th>
-                <th scope="col">Instituição</th>
-                <th scope="col">Data</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>UIPA</td>
-                <td>12/12/2018</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="panel panel-danger">
+    <div class="container text-center">
+        <a type="submit" class="btn btn-dark" href="{{ url('perfil') }}">Cancelar</a>
+        <a type="submit" class="btn btn-danger" href="{{ route('destroy, $id') }}">Excluir</a>
+    </div>
 </div>
+
 
 @endsection 

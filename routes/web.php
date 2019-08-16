@@ -24,6 +24,8 @@ Route::get('/logout', function(){
 
 Route::get('/cadastro', ["uses"=>"RegisterController@index"]);
 
+Auth::routes();
+
 //doacao
 Route::get('/doacao', ["uses"=>"DoacaoControlador@index"]);
 
@@ -37,16 +39,28 @@ Route::get('/doacao/requisicao', ["uses"=>"DoacaoControlador@visualizar"])->name
 
 Route::get('/carrinho', ["uses"=>"CarrinhoControlador@index"]);
 
-//perfil
-Route::get('/perfil', ["uses"=>"PerfilControlador@index"])->name('inst');
+//perfis
+$type = "user";
+if($type == "user"){
+    Route::get('/perfil', ["uses"=>"PerfilControlador@doadorView"])->name('doador');
+}
+if($type == "admin"){
+    Route::get('/perfil', ["uses"=>"PerfilControlador@adminView"])->name('admin');
+}
+if($type == "inst"){
+    Route::get('/perfil', ["uses"=>"PerfilControlador@instView"])->name('inst');
+}
 
-Route::get('/perfil', ["uses"=>"PerfilControlador@index"])->name('doador');
+Route::get('/{id}/editar', ["uses"=>"PerfilControlador@editar"])->name('editar');
 
-Route::get('/perfil', ["uses"=>"PerfilControlador@index"])->name('admin');
+Route::get('/{id}/excluir', ["uses"=>"PerfilControlador@excluir"])->name('excluir');
 
-Route::get('/perfil/editar', ["uses"=>"PerfilControlador@editar"])->name('editar');
+Route::get('/{id}/destroy', function(){
+    
+    return Redirect::to('login');
+ });
 
-
+//otherss
 Route::get('/contato', ["uses"=>"ContatoControlador@index"]);
 
 Route::get('/instituicoes', ["uses"=>"InstituicoesControlador@index"]);
@@ -54,6 +68,6 @@ Route::get('/instituicoes', ["uses"=>"InstituicoesControlador@index"]);
 Route::get('/sobrenos', ["uses"=>"SobrenosControlador@index"]);
 
 
-Auth::routes();
+
 
 //Route::get('/', 'HomeController@index')->name('home');
