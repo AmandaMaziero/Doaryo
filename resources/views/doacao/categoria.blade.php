@@ -21,19 +21,27 @@
 </div>
 <br><br>
 
-<div class="container text-center">
+<div class="container">
     <div class="row">
-        @foreach ($requisicao as $requi)
+
         <div class="col">
-            <div class="card" style="width: 15rem;">
-                <img src="{{ asset('imagens/{$requi->Categoria}') }}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">{{$requi->Nome}}</h5>
-                    <a href="{{ route('requisicao', ['idRequisicao' => $requi->idRequisicao]) }}" class="btn btn-dark">Saber mais...</a>
-                </div>
+            <div class="container text-center">
+                <div class="row">
+                @foreach ($categoria as $cate)
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="{{ asset('imagens/{$cate->Categoria}') }}" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$cate->Nome}}</h5>
+                                <a href="{{ route('requisicao', ['idRequisicao' => $cate->idRequisicao]) }}" class="btn btn-dark">Saber mais...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
             </div>
         </div>
-    </div>    
+
+    </div>
 </div>
 @endforeach
 @endsection

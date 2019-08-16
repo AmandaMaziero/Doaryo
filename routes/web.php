@@ -25,15 +25,17 @@ Route::get('/logout', function(){
 Route::get('/cadastro', ["uses"=>"RegisterController@index"]);
 
 //doacao
-Route::get('/doacao', ["uses"=>"DoacaoControlador@index"]);
+Route::get('/doacao', ["uses"=>"DoacaoControlador@index"])->name('doacao');
 
 Route::get('/doacao/cadastro', ["uses"=>"DoacaoControlador@cadastrar"])->name('cadastro');
 
 Route::get('/doacao/editar', ["uses"=>"DoacaoControlador@editar"])->name('editar');
 
-Route::post('/doacao/salvar', ["as"=>'doacao.salvar'], ["uses"=>"DoacaoControlador@salvar"]);
+Route::post('/doacao/adicionar', ["uses"=>"DoacaoControlador@adicionar"])->name('adicionar');
  
 Route::get('/doacao/requisicao', ["uses"=>"DoacaoControlador@visualizar"])->name('requisicao');
+
+Route::get('/doacao/categoria/{categoria}', ["uses"=>"DoacaoControlador@categoria"])->name('categoria');
 
 Route::get('/carrinho', ["uses"=>"CarrinhoControlador@index"]);
 
