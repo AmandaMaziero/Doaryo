@@ -10,7 +10,10 @@
 <div class="container text-center">
 	<h2>Cadastre suas requisições abaixo:</h2>
 <br>
-	<form action="({{route('doacao.salvar')}}" method="POST">
+<?php
+$action = route('adicionar');
+?>
+	<form action="{{ $action }}" method="POST">
 	  @csrf
 		<div class="row">  
 			<div class="col">
@@ -23,14 +26,14 @@
 			<div class="col">
 				<div class="form-group">
 					<label for="imagem">Imagem</label>
-					<select class="form-control" name="categoria">
+					<select class="form-control" name="imagem">
 						<option selected>Escolha de acordo com a sua requisição...</option>
-						<option id="roupas">Roupas</option>
-						<option id="sapatos">Sapatos</option>
-						<option id="alimentos">Alimentos não perecíveis</option>
-						<option id="brinquedos">Brinquedos</option>
-						<option id="racoes">Rações</option>
-						<option id="utensilios">Utensílios de animais no geral</option>
+						<option value="roupas">Roupas</option>
+						<option value="sapatos">Sapatos</option>
+						<option value="alimentos">Alimentos não perecíveis</option>
+						<option value="brinquedos">Brinquedos</option>
+						<option value="racoes">Rações</option>
+						<option value="utensilios">Utensílios de animais no geral</option>
 					</select>
 				</div>
 			</div>
@@ -50,6 +53,19 @@
 					<input type="text" class="form-control" name="descricao">
 				</div>
 			</div>
+
+			<div class="col">
+				<div class="form-group">
+					<label for="categoria">Categoria</label>
+					<select class="form-control" name="categoria">
+						<option selected>Escolha de acordo com a sua requisição...</option>
+						<option value="animais">Animais</option>
+						<option value="criancas_adolescentes">Crianças e Adolescentes</option>
+						<option value="idosos">Idosos</option>
+					</select>
+				</div>
+			</div>
+			
 		</div>
 <br>
 		<button class="btn btn-dark" type="submit">Cadastrar</button>

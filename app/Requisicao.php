@@ -6,17 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Requisicao extends Model
 {
-
+    protected $table = 'Requisicoes';
+    public $timestamps = false;
     protected $fillable = [
-        'nome', 'imagem', 'quantidade', 'descricao', 'idCategoria', 'idUser',
-    ];
+        'nome', 'imagem', 'quantidade', 'descricao', 'categoria', 'id',];
+    protected $primaryKey = 'idRequisicao';
+    protected $guarded = ['idRequisicao, id'];
 
-    public function listar(){
-        return(object) [
-            "nome"=>nome;
-            "imagem"=>imagem;
-            "quantidade"=>quantidade;
-            "descricao"=>descricao;
-        ]
-    }
 }

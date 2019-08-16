@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use App\Requisicao;
 
 class DoacaoControlador extends Controller
-{
-    public function index() {
-        $dados = Requisicao::orderBy('idRequisicao')->get();
-        return view('doacao.index');
+{   
+
+    public function index(Request $data) {
+        $requisicao = Requisicao::orderBy('idRequisicao')->get();
+        return view('doacao.index',compact('requisicao'));
     }
 
     public function cadastrar(){
@@ -23,15 +24,27 @@ class DoacaoControlador extends Controller
     public function excluir(){
         return view('doacao.cadastro');
     }
-
-    public function visualizar(){
-        return view('doacao.requisicao');
+    
+    public function visualizar(Request $data){
+        $requisicao = Requisicao::where('idRequisicao', $data->idRequisicao)->get();
+        return view('doacao.requisicao', compact('requisicao'));
     }
 
     public function adicionar(Request $request){
-        Requisicao::listar([
-            'Nome'=>$request['nome'],
-            'Imagem'=>$request
+        Requisicao::create([
+            'nome'=>$request['nome'],
+            'imagem'=>$request['imagem'],
+            'quantidade'=>$request['quantidade'],
+            'descricao'=>$request['descricao'],
+            'categoria'=>$request['categoria'],
+            'id'=>auth()->user()->id,
         ]);
+        return redirect()->route('admin');
     }
+
+    public function categoria(Request $data){
+        $categoria = Requisicao::where('categoria', $data->categoria)->get();
+        return view('doacao.categoria', compact('categoria'));
+    }
+
 }
