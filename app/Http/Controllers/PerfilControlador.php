@@ -16,6 +16,11 @@ class PerfilControlador extends Controller
         return view('perfil.editar',compact('id'));
     }
 
+    public function sair($id) {
+        $id = auth()->user()->id;
+        return view('perfil.sair',compact('id'));
+    }
+
     public function excluir($id) {
         $id = auth()->user()->id;
         return view('perfil.excluir',compact('id'));
