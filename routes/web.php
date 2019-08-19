@@ -42,16 +42,13 @@ Route::get('/doacao/categoria/{categoria}', ["uses"=>"DoacaoControlador@categori
 Route::get('/carrinho', ["uses"=>"CarrinhoControlador@index"]);
 
 //perfis
-$type = "user";
-if($type == "user"){
-    Route::get('/perfil', ["uses"=>"PerfilControlador@doadorView"])->name('doador');
-}
-if($type == "admin"){
-    Route::get('/perfil', ["uses"=>"PerfilControlador@adminView"])->name('admin');
-}
-if($type == "inst"){
-    Route::get('/perfil', ["uses"=>"PerfilControlador@instView"])->name('inst');
-}
+
+Route::get('/perfil', ["uses"=>"PerfilControlador@type"])->name('doador');
+
+Route::get('/perfil', ["uses"=>"PerfilControlador@type"])->name('admin');
+
+Route::get('/perfil', ["uses"=>"PerfilControlador@type"])->name('inst');
+
 
 Route::get('/{id}/editar', ["uses"=>"PerfilControlador@editar"])->name('editar');
 
