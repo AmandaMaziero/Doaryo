@@ -16,7 +16,7 @@ class PerfilControlador extends Controller
         return view('perfil.editar',compact('id'));
     }
 
-    public function sair($id) {
+    public function sair() {
         $id = auth()->user()->id;
         return view('perfil.sair',compact('id'));
     }

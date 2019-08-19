@@ -11,10 +11,10 @@
 <div class="container text-center">
 
     <div class="list-group list-group-horizontal">
-        <a class="list-group-item list-group-item-action" href="#">Requisições</a>
-        <a class="list-group-item list-group-item-action" href="{{ asset('perfil/editar') }}">Editar Perfil</a>
-        <a class="list-group-item list-group-item-action" href="{{ route('logout')}}">Sair da Conta</a>
-        <a class="list-group-item list-group-item-action" href="#">Excluir Conta</a>
+    <a class="list-group-item list-group-item-action" href="{{ url('perfil') }}">Requisições</a>
+        <a class="list-group-item list-group-item-action" href="{{ route('editar', $id) }}">Editar Perfil</a>
+        <a class="list-group-item list-group-item-action" href="{{ route('sair')}}">Sair da Conta</a>
+        <a class="list-group-item list-group-item-action" href="{{ route('excluir', $id) }}">Excluir Conta</a>
     </div>
 </div>
 <br><br>

@@ -42,6 +42,7 @@ Route::get('/doacao/categoria/{categoria}', ["uses"=>"DoacaoControlador@categori
 Route::get('/carrinho', ["uses"=>"CarrinhoControlador@index"]);
 
 //perfis
+Route::get('perfil/sair', ["uses"=>"PerfilControlador@sair"])->name('sair');
 
 Route::get('/perfil', ["uses"=>"PerfilControlador@type"])->name('doador');
 
