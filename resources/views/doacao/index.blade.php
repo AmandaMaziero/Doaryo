@@ -23,17 +23,23 @@
 
 <div class="container text-center">
     <div class="row">
-        @foreach ($requisicao as $requi)
-        <div class="col">
-            <div class="card" style="width: 15rem;">
-                <img src="{{ asset('imagens/{$requi->Categoria}') }}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">{{$requi->Nome}}</h5>
-                    <a href="{{ route('requisicao', ['idRequisicao' => $requi->idRequisicao]) }}" class="btn btn-dark">Saber mais...</a>
+        @if(count($requisicao)==0)
+            <div class="col-md-12 text-center">
+				<h1>Não há requisições cadastradas</h1>
+			</div>
+        @else
+            @foreach ($requisicao as $requi)
+                <div class="col-4 p-2">
+                    <div class="card" style="width: 15rem;">
+                        <img src="{{ asset('imagens/{$requi->Categoria}') }}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$requi->Nome}}</h5>
+                            <a href="{{ route('requisicao', ['idRequisicao' => $requi->idRequisicao]) }}" class="btn btn-dark">Saber mais...</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            @endforeach
+        @endif
     </div>    
 </div>
-@endforeach
 @endsection
