@@ -51,11 +51,11 @@ Route::get('/perfil', ["uses"=>"PerfilControlador@type"])->name('admin');
 Route::get('/perfil', ["uses"=>"PerfilControlador@type"])->name('inst');
 
 
-Route::get('/{id}/editar', ["uses"=>"PerfilControlador@editar"])->name('editar');
+Route::get('perfil/{id}/editar', ["uses"=>"PerfilControlador@editar"])->name('editar');
 
-Route::get('/{id}/excluir', ["uses"=>"PerfilControlador@excluir"])->name('excluir');
+Route::get('perfil/{id}/excluir', ["uses"=>"PerfilControlador@excluir"])->name('excluir');
 
-Route::get('/{id}/destroy', function(){
+Route::get('perfil/{id}/destroy', function(){
     
     return Redirect::to('login');
  });
