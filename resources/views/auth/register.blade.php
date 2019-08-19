@@ -59,15 +59,22 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
-                    <label for="type">{{ __('Type') }}</label>
-                    <input id="type" type="text" class="form-control @error('type') is-invalid @enderror" name="type" value="{{ old('type') }}" required autocomplete="type" autofocus>
-                    @error('type')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="type">{{ __('Type') }}</label>
+                <select class="form-control @error('type') is-invalid @enderror" name="type" value="{{ old('type') }}" required autocomplete="type" autofocus>
+                    <option selected>Escolha o tipo de usuário</option>
+                    <option value="admin">Administrador</option>
+                    <option value="inst">Instituição</option>
+                    <option value="user">Doador</option>
+                </select>
+                @error('type')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+		</div>
         <div class="form-group">
              <button type="submit" class="btn btn-dark">{{ __('Register') }}</button>
         </div>   
