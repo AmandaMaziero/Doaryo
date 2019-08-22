@@ -43,6 +43,10 @@ class PerfilControlador extends Controller
         }
     }
 
+    public function VerificarDoadores(){
+        
+    }
+
     //->select('column')->from('table')->where('where clause')->get();
     
 }
