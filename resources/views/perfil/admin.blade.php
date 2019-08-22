@@ -24,7 +24,7 @@
     <div class="list-group list-group">
         <a class="list-group-item list-group-item-action" href="#">Doadores</a>
         <a class="list-group-item list-group-item-action" href="#">Instituições</a>
-        <a class="list-group-item list-group-item-action" href="{{ asset('doacao/requisicao') }}">Requisições</a>
+        <a class="list-group-item list-group-item-action" href="{{ asset('doacao') }}">Requisições</a>
         <a class="list-group-item list-group-item-action" href="{{ asset('doacao/cadastro') }}">Doações</a>
     </div>
 </div>

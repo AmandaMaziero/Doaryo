@@ -39,7 +39,14 @@ class DoacaoControlador extends Controller
             'categoria'=>$request['categoria'],
             'id'=>auth()->user()->id,
         ]);
-        return redirect()->route('admin');
+
+        $type = auth()->user()->type;
+        if($type == "admin"){
+            return redirect()->route('admin');
+        }elseif($type == "inst"){
+            return redirect()->route('inst');
+        }
+
     }
 
     public function categoria(Request $data){
