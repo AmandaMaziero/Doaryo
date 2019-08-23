@@ -13,7 +13,7 @@ class CreateRequisicoesTable extends Migration
      */
     public function up()
     {
-        Schema::create('requisicoes', function (Blueprint $table) {
+        Schema::create('Requisicoes', function (Blueprint $table) {
             $table->increments('idRequisicao');
             $table->string('Nome');
             $table->string('Quantidade');

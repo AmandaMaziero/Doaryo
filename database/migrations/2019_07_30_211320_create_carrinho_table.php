@@ -17,7 +17,7 @@ class CreateCarrinhoTable extends Migration
             $table->increments('idCarrinho');
             $table->integer('idRequisicao')->unsigned();
             $table->integer('id')->unsigned();
-            $table->foreign('idRequisicao')->references('idRequisicao')->on('requisicoes');
+            $table->foreign('idRequisicao')->references('idRequisicao')->on('Requisicoes');
             $table->foreign('id')->references('id')->on('users');
             $table->timestamps();
         });

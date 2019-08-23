@@ -31,7 +31,9 @@ Route::get('/doacao', ["uses"=>"DoacaoControlador@index"])->name('doacao');
 
 Route::get('/doacao/cadastro', ["uses"=>"DoacaoControlador@cadastrar"])->name('cadastro');
 
-Route::get('/doacao/editar', ["uses"=>"DoacaoControlador@editar"])->name('editar');
+Route::get('/doacao/editar', ["uses"=>"DoacaoControlador@editar"])->name('editarRequi');
+
+Route::post('/doacao/atualizar', ["uses"=>"DoacaoControlador@atualizar"])->name('atualizar');
 
 Route::post('/doacao/adicionar', ["uses"=>"DoacaoControlador@adicionar"])->name('adicionar');
  
@@ -54,6 +56,8 @@ Route::get('/perfil', ["uses"=>"PerfilControlador@type"])->name('inst');
 Route::get('perfil/{id}/editar', ["uses"=>"PerfilControlador@editar"])->name('editar');
 
 Route::get('perfil/{id}/excluir', ["uses"=>"PerfilControlador@excluir"])->name('excluir');
+
+Route::post('perfil/atualizar', ["uses"=>"PerfilControlador@atualizar"])->name('atualizarUser');
 
 Route::get('perfil/{id}/destroy', function(){
     

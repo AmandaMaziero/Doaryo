@@ -13,6 +13,7 @@
 <?php
 $action = route('adicionar');
 ?>
+
 	<form action="{{ $action }}" method="POST">
 	  @csrf
 		<div class="row">  

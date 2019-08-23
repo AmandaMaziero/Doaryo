@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class PerfilControlador extends Controller
 {   
@@ -11,19 +12,23 @@ class PerfilControlador extends Controller
         return view('perfil.doacoes',compact('id'));
     }
 
-    public function editar($id) {
+    public function editar(Request $data) {
+        $user = user::where('id', $data->id)->get();
         $id = auth()->user()->id;
-        return view('perfil.editar',compact('id'));
+        $type = auth()->user()->type;
+        return view('perfil.editar',compact('id', 'type', 'user'));
     }
 
     public function sair() {
         $id = auth()->user()->id;
-        return view('perfil.sair',compact('id'));
+        $type = auth()->user()->type;
+        return view('perfil.sair',compact('id', 'type'));
     }
 
     public function excluir($id) {
         $id = auth()->user()->id;
-        return view('perfil.excluir',compact('id'));
+        $type = auth()->user()->type;
+        return view('perfil.excluir',compact('id', 'type'));
     }
 
     public function destroy(){
@@ -47,6 +52,19 @@ class PerfilControlador extends Controller
         
     }
 
-    //->select('column')->from('table')->where('where clause')->get();
+    public function atualizar(Request $request){
+        //dd($request);
+        if($request['password'] == $request['password_confirmation']){
+            //dd($request);
+            $user = User::findOrFail($request['id']);
+            $user->name = $request['name'];
+            $user->email = $request['email'];
+            $user->password = $request['password'];
+            $user->save();
+            return redirect('/perfil');
+        }else{
+            echo "erro";
+        }
+    }
     
 }

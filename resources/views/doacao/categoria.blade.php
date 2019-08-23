@@ -13,6 +13,7 @@
             Categorias
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{{ asset('doacao') }}">Todas as categorias</a>
             <a class="dropdown-item" href="{{ route('categoria', 'criancas_adolescentes') }}" value="criancas_adolescentes">Crianças e Adolescentes</a>
             <a class="dropdown-item" href="{{ route('categoria', 'animais') }}" value="animais">Animais</a>
             <a class="dropdown-item" href="{{ route('categoria', 'idosos') }}" value="idosos">Idosos</a>

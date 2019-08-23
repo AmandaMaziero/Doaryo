@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Requisicao;
+use App\Http\Controllers\PerfilControlador;
 
 class DoacaoControlador extends Controller
 {   
@@ -17,8 +18,9 @@ class DoacaoControlador extends Controller
         return view('doacao.cadastro');
     }
 
-    public function editar(){
-        return view('doacao.editar');
+    public function editar(Request $data){
+        $requisicao = Requisicao::where('idRequisicao', $data->idRequisicao)->get();
+        return view('doacao.editar', compact('requisicao'));
     }
 
     public function excluir(){
@@ -40,13 +42,21 @@ class DoacaoControlador extends Controller
             'id'=>auth()->user()->id,
         ]);
 
-        $type = auth()->user()->type;
-        if($type == "admin"){
-            return redirect()->route('admin');
-        }elseif($type == "inst"){
-            return redirect()->route('inst');
-        }
+        return redirect('/perfil');
 
+    }
+
+    public function atualizar(Request $request){
+        //dd($request);
+        $requisicao = Requisicao::findOrFail($request['idRequisicao']);
+        $requisicao->nome = $request['nome'];
+        $requisicao->imagem = $request['imagem'];
+        $requisicao->quantidade = $request['quantidade'];
+        $requisicao->descricao = $request['descricao'];
+        $requisicao->categoria = $request['categoria'];
+        $requisicao->id = auth()->user()->id;
+        $requisicao->save();
+        return redirect('/perfil');
     }
 
     public function categoria(Request $data){

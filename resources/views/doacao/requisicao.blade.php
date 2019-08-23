@@ -23,11 +23,11 @@
 					<input type="number" class="form-control" name="quantidade">
 				</div>
 				<div class="form-group">
-					<button class="btn btn-dark">Adicionar ao Carrinho</button>
+					<button class="btn btn-dark">Adicionar ao Cesto</button>
 				</div> 
 			</form>
 
-			<a href="{{ asset('doacao/editar') }}" class="btn btn-dark">Editar</a>
+			<a href="{{ route('editarRequi', ['idRequisicao' => $requi->idRequisicao]) }}" class="btn btn-dark">Editar</a>
 		</div>
 
 	</div>
