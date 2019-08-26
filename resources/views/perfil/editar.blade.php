@@ -91,6 +91,8 @@
                         @enderror
                     </div>
                 </div>
+            @else
+                <input type="hidden" class="form-control" name="type" value="{{ $users->type }}">
             @endif
             <div class="form-group">
                 <a type="submit" class="btn btn-dark" href="{{ url('perfil') }}">Cancelar</a>

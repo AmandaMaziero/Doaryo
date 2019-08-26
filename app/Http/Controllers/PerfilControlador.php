@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 
 class PerfilControlador extends Controller
@@ -49,7 +50,16 @@ class PerfilControlador extends Controller
     }
 
     public function VerificarDoadores(){
-        
+        $data = "user";
+        $user = User::where('type', "user")->get();
+        dd($user);
+        return view('perfil.dados', compact('user'));
+    }
+
+    public function VerificarInstituicoes(){
+        $data = "inst";
+        $user = User::where('type', $data)->get();
+        return view('perfil.dados', compact('user'));
     }
 
     public function atualizar(Request $request){
@@ -59,7 +69,8 @@ class PerfilControlador extends Controller
             $user = User::findOrFail($request['id']);
             $user->name = $request['name'];
             $user->email = $request['email'];
-            $user->password = $request['password'];
+            $user->password = Hash::make($request['password']);
+            $user->type = $request['type'];
             $user->save();
             return redirect('/perfil');
         }else{

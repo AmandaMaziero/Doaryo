@@ -20,12 +20,11 @@
 <br><br>
 
 <div class="container text-center">
-    <h2>Verificar:</h2>
     <div class="list-group list-group">
-        <a class="list-group-item list-group-item-action" href="#">Doadores</a>
-        <a class="list-group-item list-group-item-action" href="#">Instituições</a>
+        <a class="list-group-item list-group-item-action" href="{{ route('dadosDoador') }}">Doadores</a>
+        <a class="list-group-item list-group-item-action" href="{{ route('dadosInst') }}">Instituições</a>
         <a class="list-group-item list-group-item-action" href="{{ asset('doacao') }}">Requisições</a>
-        <a class="list-group-item list-group-item-action" href="{{ asset('doacao/cadastro') }}">Doações</a>
+        <a class="list-group-item list-group-item-action" href="{{ asset('doacao/cadastro') }}">Cadastrar Doações</a>
     </div>
 </div>
 <br><br>

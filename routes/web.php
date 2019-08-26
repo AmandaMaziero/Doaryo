@@ -52,6 +52,9 @@ Route::get('/perfil', ["uses"=>"PerfilControlador@type"])->name('admin');
 
 Route::get('/perfil', ["uses"=>"PerfilControlador@type"])->name('inst');
 
+Route::get('/perfil/dadosDoador', ["uses"=>"PerfilControlador@VerificarDoadores"])->name('dadosDoador');
+
+Route::get('/perfil/dadosInst', ["uses"=>"PerfilControlador@VerificarInstituicoes"])->name('dadosInst');
 
 Route::get('perfil/{id}/editar', ["uses"=>"PerfilControlador@editar"])->name('editar');
 
