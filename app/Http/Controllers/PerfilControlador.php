@@ -51,8 +51,7 @@ class PerfilControlador extends Controller
 
     public function VerificarDoadores(){
         $data = "user";
-        $user = User::where('type', "user")->get();
-        dd($user);
+        $user = User::where('type', $data)->get();
         return view('perfil.dados', compact('user'));
     }
 
