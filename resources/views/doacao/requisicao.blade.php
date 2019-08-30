@@ -5,16 +5,18 @@
 
 <br>
 <div class="container text-center">
+	@foreach($instituicao as $inst)
 	@foreach($requisicao as $requi)
+
 	<h2>{{$requi->Nome}}</h2>
-	<h3>Requerido por: {{$requi->id}}</h3>
+	<h3>Requerido por: {{$inst->Nome}}</h3>
 </div>
 <br>
 
 <div class="container text-center">
 	<div class="row">
 		<div class="col">
-			<img src="{{ asset('imagens/{$requisicao->Imagem}') }}" alt="{{$requi->Nome}}" style="width:100%;">
+			<img src="{{ asset('imagens/{$requi->Imagem}') }}" alt="{{$requi->Nome}}" style="width:100%;">
 		</div>
 		<div class="col">
 			<form>
@@ -26,11 +28,10 @@
 					<button class="btn btn-dark">Adicionar ao Cesto</button>
 				</div> 
 			</form>
-
-			<a href="{{ route('editarRequi', ['idRequisicao' => $requi->idRequisicao]) }}" class="btn btn-dark">Editar</a>
 		</div>
 
 	</div>
 </div>
-@endforeach
+	@endforeach
+	@endforeach
 @endsection

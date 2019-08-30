@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use App\Requisicao;
 
 class PerfilControlador extends Controller
 {   
@@ -40,12 +41,13 @@ class PerfilControlador extends Controller
     public function type(){
         $id = auth()->user()->id;
         $type = auth()->user()->type;
+        $req = Requisicao::where ('id', $id)->get();
         if ($type=="admin"){
             return view('perfil.admin',compact('id')); 
         }elseif($type=="user"){
             return view('perfil.doador',compact('id'));
         }else{
-            return view('perfil.inst',compact('id'));
+            return view('perfil.inst',compact('id', 'req'));
         }
     }
 

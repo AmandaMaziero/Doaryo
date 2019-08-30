@@ -35,7 +35,7 @@
                         <img src="{{ asset('imagens/{$cate->Categoria}') }}" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">{{$cate->Nome}}</h5>
-                            <a href="{{ route('requisicao', ['idRequisicao' => $cate->idRequisicao]) }}" class="btn btn-dark">Saber mais...</a>
+                            <a href="{{ route('requisicao', ['idRequisicao' => $cate->idRequisicao]) }}" class="btn btn-dark">Saber mais...</a>,
                         </div>
                     </div>
                 </div>

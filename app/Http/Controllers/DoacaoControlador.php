@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Requisicao;
-use App\Http\Controllers\PerfilControlador;
+use App\User;
 
 class DoacaoControlador extends Controller
 {   
@@ -28,8 +28,12 @@ class DoacaoControlador extends Controller
     }
     
     public function visualizar(Request $data){
+        //dd($data);
         $requisicao = Requisicao::where('idRequisicao', $data->idRequisicao)->get();
-        return view('doacao.requisicao', compact('requisicao'));
+        //dd($requisicao);
+        $instituicao = User::where('id', $data->id )->get();
+        //dd($instituicao);
+        return view('doacao.requisicao', compact('requisicao', 'instituicao'));
     }
 
     public function adicionar(Request $request){
