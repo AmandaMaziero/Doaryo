@@ -28,12 +28,8 @@ class DoacaoControlador extends Controller
     }
     
     public function visualizar(Request $data){
-        //dd($data);
         $requisicao = Requisicao::where('idRequisicao', $data->idRequisicao)->get();
-        //dd($requisicao);
-        $instituicao = User::where('id', $data->id )->get();
-        //dd($instituicao);
-        return view('doacao.requisicao', compact('requisicao', 'instituicao'));
+        return view('doacao.requisicao', compact('requisicao'));
     }
 
     public function adicionar(Request $request){

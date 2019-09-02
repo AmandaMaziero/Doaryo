@@ -21,10 +21,14 @@
             </li>
             @if (Route::has('login'))
                 @auth
-                  <li class="nav-item">
-                  <a class="nav-link" href="{{ asset('perfil') }}">Perfil</a>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{{ url('perfil') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Perfil</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ asset('perfil') }}">Perfil</a>
+                      <a class="dropdown-item" href="{{ url('/logout') }}">Sair</a>
+                    </div>
                   </li>
-                  
+
                   <li class="nav-item">
                   <a class="nav-link" href="{{ asset('carrinho') }}"><i class="large material-icons" style="font-size:40px; color:black;">shopping_basket</i></a>
                   </li>

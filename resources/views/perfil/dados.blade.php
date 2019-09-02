@@ -9,32 +9,36 @@
 <br>
 
 <div class="container text-center">
-    @foreach($user as $users)
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">Usuários</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="row">
-                            <div class="col-6"><p>{{$users->id}}</p></div>
-                            <div class="col-6">
-                                <div class="list-group list-group-horizontal">
-                                    <a class="list-group-item list-group-item-action" href="#">Excluir</a>
-                                    <a class="list-group-item list-group-item-action" href="{{ route('editar', $users->id) }}">Editar</a>
-                                </div>
-                            </div> 
-                        </div>    
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    @if(!empty($users))
+        @foreach($user as $users)
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Usuários</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <div class="col-6"><p>{{$users->name}}</p></div>
+                                <div class="col-6">
+                                    <div class="list-group list-group-horizontal">
+                                        <a class="list-group-item list-group-item-action" href="#">Excluir</a>
+                                        <a class="list-group-item list-group-item-action" href="{{ route('editar', $users->id) }}">Editar</a>
+                                    </div>
+                                </div> 
+                            </div>    
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <a href="{{ url('perfil') }}" class="btn btn-dark">Voltar</a>
-    @endforeach
+            <a href="{{ url('perfil') }}" class="btn btn-dark">Voltar</a>
+        @endforeach
+    @else
+        <h1>Não há usuários deste tipo</h1>
+    @endif
 </div>
 
 @endsection 

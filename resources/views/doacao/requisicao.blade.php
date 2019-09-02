@@ -5,11 +5,10 @@
 
 <br>
 <div class="container text-center">
-	@foreach($instituicao as $inst)
 	@foreach($requisicao as $requi)
 
 	<h2>{{$requi->Nome}}</h2>
-	<h3>Requerido por: {{$inst->Nome}}</h3>
+	<h3>Requerido por: {{$requi->id}}</h3>
 </div>
 <br>
 
@@ -19,11 +18,17 @@
 			<img src="{{ asset('imagens/{$requi->Imagem}') }}" alt="{{$requi->Nome}}" style="width:100%;">
 		</div>
 		<div class="col">
-			<form>
+			<form action="{{ route('addCarrinho') }}" method="POST">
+			@csrf
 				<div class="form-group">    
 					<label>Quantidade</label>
 					<input type="number" class="form-control" name="quantidade">
 				</div>
+
+				<div class="form-group">    
+					<input type="hidden" class="form-control" name="idRequisicao" value="{{$requi->idRequisicao}}">
+				</div>
+
 				<div class="form-group">
 					<button class="btn btn-dark">Adicionar ao Cesto</button>
 				</div> 
@@ -32,6 +37,5 @@
 
 	</div>
 </div>
-	@endforeach
 	@endforeach
 @endsection

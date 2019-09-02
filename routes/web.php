@@ -37,7 +37,7 @@ Route::post('/doacao/atualizar', ["uses"=>"DoacaoControlador@atualizar"])->name(
 
 Route::post('/doacao/adicionar', ["uses"=>"DoacaoControlador@adicionar"])->name('adicionar');
  
-Route::get('/doacao/requisicao', ["uses"=>"DoacaoControlador@visualizar"])->name('requisicao');
+Route::get('/doacao/requisicao/{idRequisicao}', ["uses"=>"DoacaoControlador@visualizar"])->name('requisicao');
 
 Route::get('/doacao/categoria/{categoria}', ["uses"=>"DoacaoControlador@categoria"])->name('categoria');
 
@@ -74,7 +74,8 @@ Route::get('/instituicoes', ["uses"=>"InstituicoesControlador@index"]);
 
 Route::get('/sobrenos', ["uses"=>"SobrenosControlador@index"]);
 
-
+//carrinho
+Route::post('/carrinho', ["uses"=>"CarrinhoControlador@criar"])->name('addCarrinho');
 
 
 //Route::get('/', 'HomeController@index')->name('home');

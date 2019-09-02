@@ -11,6 +11,6 @@ class Carrinho extends Model
     protected $fillable = [
         'idCarrinho', 'idRequisicao', 'id',];
     protected $primaryKey = 'idCarrinho';
-    protected $guarded = ['idRequisicao, id', 'idCarrinho'];
+    protected $guarded = ['idRequisicao', 'id', 'idCarrinho'];
 
 }

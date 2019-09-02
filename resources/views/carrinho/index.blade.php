@@ -11,29 +11,28 @@
 		<h1>Não há nenhum item aqui!</h1>
 	</div>
 @else
-	@foreach($carrinho as $carrinhos)
+	@foreach($carrinhos as $carrinho)
 		<div class="container text-center">
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th scope="col">Imagem</th>
-						<th scope="col">Descrição</th>
+						<th scope="col">Nome</th>
 						<th scope="col">Quantidade</th>
 						<th scope="col">Instituição Solicitante</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td><img src="{{ asset('imagens/{$cate->Categoria}') }}" class="card-img-top"></td>
-						<td><strong>{{$carrinhos->Nome}}</strong></td>
+						<td><strong>{{$carrinho->Nome}}</strong></td>
 						<td>
-							<form>
+							<form action="{{route('addCarrinho')}}" method="POST">
+							@csrf
 								<div class="form-group">
 									<input type="number" name="quantdade" class="form-control" value="{{$carrinhos->Quantidade}}">
 								</div>
 							</form>
 						</td>
-						<td>{{$carrinhos->id}}</td>
+						<td>{{$carrinho->id}}</td>
 					</tr>
 				</tbody>
 			</table>

@@ -20,7 +20,7 @@
 <br><br>
 
 <div class="container text-center">
-    @if(!isset($req)) 
+    @if(empty($reqs)) 
         <h1>Não há requisições solicitadas</h1>
     @else
         @foreach($req as $reqs)
