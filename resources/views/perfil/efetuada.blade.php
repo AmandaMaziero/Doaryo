@@ -21,30 +21,18 @@
 
 <div class="container text-center">
     @if(count($req) == 0) 
-        <h1>Não há requisições solicitadas</h1>
+        <h1>Não há doações recebidas</h1>
     @else
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Requisição</th>
-                        <th scope="col">Quantidade</th>
                     </tr>
                 </thead>
         @foreach($req as $reqs)
                 <tbody>
                     <tr>
                         <td>{{$reqs->Nome}}</td>
-                        <td>
-                            <div class="row">
-                                <div class="col-6"><p>{{$reqs->Quantidade}}</p></div>
-                                <div class="col-6">
-                                    <div class="list-group list-group-horizontal">
-                                        <a class="list-group-item list-group-item-action" href="#">Excluir</a>
-                                        <a class="list-group-item list-group-item-action" href="{{ route('editarRequi', ['idRequisicao' => $reqs->idRequisicao]) }}">Editar</a>
-                                    </div>
-                                </div> 
-                            </div>    
-                        </td>
                     </tr>
                 </tbody>
         @endforeach 
@@ -55,7 +43,6 @@
 
 <div class="container text-center">
     <div class="list-group list-group-horizontal">
-        @if(count($req)!= 0)<a class="list-group-item list-group-item-action" href="#">Excluir todas</a>@endif
         <a class="list-group-item list-group-item-action" href="{{route('cadastro')}}">Adicionar Requisição</a>
         <a class="list-group-item list-group-item-action" href="{{route('recebidas')}}">Doações Recebidas</a>
     </div>

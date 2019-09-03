@@ -36,9 +36,9 @@ class DoacaoControlador extends Controller
         Requisicao::create([
             'nome'=>$request['nome'],
             'imagem'=>$request['imagem'],
-            'quantidade'=>$request['quantidade'],
             'descricao'=>$request['descricao'],
             'categoria'=>$request['categoria'],
+            'status'=> $request['status'],
             'id'=>auth()->user()->id,
         ]);
 
@@ -51,9 +51,9 @@ class DoacaoControlador extends Controller
         $requisicao = Requisicao::findOrFail($request['idRequisicao']);
         $requisicao->nome = $request['nome'];
         $requisicao->imagem = $request['imagem'];
-        $requisicao->quantidade = $request['quantidade'];
         $requisicao->descricao = $request['descricao'];
         $requisicao->categoria = $request['categoria'];
+        $requisicao->status = $request['status'];
         $requisicao->id = auth()->user()->id;
         $requisicao->save();
         return redirect('/perfil');

@@ -16,10 +16,10 @@ class CreateRequisicoesTable extends Migration
         Schema::create('Requisicoes', function (Blueprint $table) {
             $table->increments('idRequisicao');
             $table->string('Nome');
-            $table->string('Quantidade');
             $table->string('Imagem');
             $table->string('Descricao');
             $table->string('Categoria');
+            $table->string('Status');
             $table->integer('id')->unsigned();
             $table->foreign('id')->references('id')->on('users');
             $table->timestamps();

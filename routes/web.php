@@ -41,8 +41,6 @@ Route::get('/doacao/requisicao/{idRequisicao}', ["uses"=>"DoacaoControlador@visu
 
 Route::get('/doacao/categoria/{categoria}', ["uses"=>"DoacaoControlador@categoria"])->name('categoria');
 
-Route::get('/carrinho', ["uses"=>"CarrinhoControlador@index"]);
-
 //perfis
 Route::get('perfil/sair', ["uses"=>"PerfilControlador@sair"])->name('sair');
 
@@ -56,6 +54,8 @@ Route::get('/perfil/dadosDoador', ["uses"=>"PerfilControlador@VerificarDoadores"
 
 Route::get('/perfil/dadosInst', ["uses"=>"PerfilControlador@VerificarInstituicoes"])->name('dadosInst');
 
+Route::get('/perfil/efetuada', ["uses"=>"PerfilControlador@recebidas"])->name('recebidas');
+
 Route::get('perfil/{id}/editar', ["uses"=>"PerfilControlador@editar"])->name('editar');
 
 Route::get('perfil/{id}/excluir', ["uses"=>"PerfilControlador@excluir"])->name('excluir');
@@ -67,7 +67,7 @@ Route::get('perfil/{id}/destroy', function(){
     return Redirect::to('login');
  });
 
-//otherss
+//others
 Route::get('/contato', ["uses"=>"ContatoControlador@index"]);
 
 Route::get('/instituicoes', ["uses"=>"InstituicoesControlador@index"]);
@@ -77,5 +77,6 @@ Route::get('/sobrenos', ["uses"=>"SobrenosControlador@index"]);
 //carrinho
 Route::post('/carrinho', ["uses"=>"CarrinhoControlador@criar"])->name('addCarrinho');
 
+Route::get('/carrinho', ["uses"=>"CarrinhoControlador@index"]);
 
 //Route::get('/', 'HomeController@index')->name('home');

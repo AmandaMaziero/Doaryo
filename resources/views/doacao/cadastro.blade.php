@@ -41,12 +41,6 @@ $action = route('adicionar');
 		</div>
 
 		<div class="row">
-			<div class="col">
-				<div class="form-group">    
-					<label for="quantidade">Quantidade</label>
-					<input type="number" class="form-control" name="quantidade">
-				</div>
-			</div>
   
 			<div class="col">
 				<div class="form-group">
@@ -66,6 +60,8 @@ $action = route('adicionar');
 					</select>
 				</div>
 			</div>
+
+			<input type="hidden" value="Pendente" name="status">
 			
 		</div>
 <br>

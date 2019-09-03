@@ -18,10 +18,13 @@ class CarrinhoControlador extends Controller
     }
 
     public function criar(Request $request){
+        dd($request);
         Carrinho::create([
             'idRequisicao'=>$request['idRequisicao'],
             'id'=>auth()->user()->id,
         ]);
+
+        return redirect('carrinho');
     }
 
     public function adicionar(){
@@ -31,6 +34,7 @@ class CarrinhoControlador extends Controller
     public function removerUm(){
 
     }
+
     public function removerTodos(){
 
     }

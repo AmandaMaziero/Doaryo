@@ -41,16 +41,10 @@ $action = route('atualizar');
 					</select>
 				</div>
 			</div>
+			
 		</div>
 
 		<div class="row">
-			<div class="col">
-				<div class="form-group">    
-					<label>Quantidade</label>
-					<input type="number" class="form-control" name="quantidade" value="{{$requi->Quantidade}}">
-				</div>
-			</div>
-  
 			<div class="col">
 				<div class="form-group">
 					<label>Descrição:</label>
@@ -69,7 +63,19 @@ $action = route('atualizar');
 					</select>
 				</div>
 			</div>
+
+			<div class="col">
+				<div class="form-group">
+					<label for="status">Status</label>
+					<select class="form-control" name="status">
+						<option selected>Qual o status atual desta requisição?</option>
+						<option value="Pendente">Pendente</option>
+						<option value="Efetuada">Efetuada</option>
+					</select>
+				</div>
+			</div>
 		</div>
+
 <br>
 		<div class="form-group">
 			<button class="btn btn-dark">Editar</button>

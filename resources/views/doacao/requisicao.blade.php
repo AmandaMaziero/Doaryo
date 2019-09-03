@@ -6,25 +6,22 @@
 <br>
 <div class="container text-center">
 	@foreach($requisicao as $requi)
-
-	<h2>{{$requi->Nome}}</h2>
-	<h3>Requerido por: {{$requi->id}}</h3>
+	<h2>{{$requi->Nome}}</h2><br>
+	<div class="row">
+		<div class="col"><h4>Requerido por: {{$requi->id}}</h4></div>
+		<div class="col"><h4>{{$requi->Descricao}}</h4></div>
+	</div>
 </div>
 <br>
 
 <div class="container text-center">
 	<div class="row">
 		<div class="col">
-			<img src="{{ asset('imagens/{$requi->Imagem}') }}" alt="{{$requi->Nome}}" style="width:100%;">
+			<img src="{{ asset('imagens/{$requi->Imagem}') }}" alt="{{$requi->Nome}}" style="width:50%;">
 		</div>
 		<div class="col">
 			<form action="{{ route('addCarrinho') }}" method="POST">
 			@csrf
-				<div class="form-group">    
-					<label>Quantidade</label>
-					<input type="number" class="form-control" name="quantidade">
-				</div>
-
 				<div class="form-group">    
 					<input type="hidden" class="form-control" name="idRequisicao" value="{{$requi->idRequisicao}}">
 				</div>

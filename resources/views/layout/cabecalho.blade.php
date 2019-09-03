@@ -29,9 +29,11 @@
                     </div>
                   </li>
 
-                  <li class="nav-item">
-                  <a class="nav-link" href="{{ asset('carrinho') }}"><i class="large material-icons" style="font-size:40px; color:black;">shopping_basket</i></a>
-                  </li>
+                  @if(auth()->user()->type == "user")
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ asset('carrinho') }}"><i class="large material-icons" style="font-size:40px; color:black;">shopping_basket</i></a>
+                    </li>
+                  @endif
                 @else
                   <li class="nav-item">
                   <a class="nav-link" href="{{ asset('login') }}">Entrar</a>

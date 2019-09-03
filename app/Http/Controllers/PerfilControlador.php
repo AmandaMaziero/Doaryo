@@ -41,7 +41,7 @@ class PerfilControlador extends Controller
     public function type(){
         $id = auth()->user()->id;
         $type = auth()->user()->type;
-        $req = Requisicao::where ('id', $id)->get();
+        $req = Requisicao::where ('id', $id)->where ('status', 'Pendente')->get();
         if ($type=="admin"){
             return view('perfil.admin',compact('id')); 
         }elseif($type=="user"){
@@ -77,6 +77,12 @@ class PerfilControlador extends Controller
         }else{
             echo "erro";
         }
+    }
+
+    public function recebidas(){
+        $id = auth()->user()->id;
+        $req = Requisicao::where ('id', $id)->where ('status', 'Efetuada')->get();
+        return view('perfil.efetuada',compact('id', 'req'));
     }
     
 }

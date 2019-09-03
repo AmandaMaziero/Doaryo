@@ -16,7 +16,7 @@ class CreateDoacaoTable extends Migration
         Schema::create('doacao', function (Blueprint $table) {
             $table->increments('idDoacao');
             $table->string('Produto');
-            $table->string('DataDoacao');
+            $table->date('DataDoacao');
             $table->integer('id')->unsigned();
             $table->foreign('id')->references('id')->on('users');
             $table->timestamps();
