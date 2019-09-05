@@ -14,11 +14,11 @@ class CarrinhoControlador extends Controller
         foreach($carrinho as $carrinhos){
             $carrinhos = Requisicao::where('idRequisicao', $carrinho->idRequisicao)->get();
         }
+        //dd($carrinho);
         return view('carrinho.index',compact('carrinhos'));
     }
 
     public function criar(Request $request){
-        dd($request);
         Carrinho::create([
             'idRequisicao'=>$request['idRequisicao'],
             'id'=>auth()->user()->id,

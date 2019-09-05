@@ -8,7 +8,7 @@
 	@foreach($requisicao as $requi)
 	<h2>{{$requi->Nome}}</h2><br>
 	<div class="row">
-		<div class="col"><h4>Requerido por: {{$requi->id}}</h4></div>
+		<div class="col"><h4>Requerido por: {{$requi->name}}</h4></div>
 		<div class="col"><h4>{{$requi->Descricao}}</h4></div>
 	</div>
 </div>

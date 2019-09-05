@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Requisicao;
 use App\User;
+use DB;
+
 
 class DoacaoControlador extends Controller
 {   
@@ -28,8 +30,9 @@ class DoacaoControlador extends Controller
     }
     
     public function visualizar(Request $data){
-        $requisicao = Requisicao::where('idRequisicao', $data->idRequisicao)->get();
-        return view('doacao.requisicao', compact('requisicao'));
+        $requisicao = Requisicao::join('users', 'users.id', '=', 'Requisicoes.id')
+            ->where('idRequisicao', $data->idRequisicao)->get();
+        return view('doacao.requisicao', compact('requisicao', 'user'));
     }
 
     public function adicionar(Request $request){

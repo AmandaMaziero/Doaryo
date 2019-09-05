@@ -6,7 +6,7 @@
 	<h1 class='display-1 text-center'>Carrinho Solidário</h1>
 </div>
 <br>
-@if (empty($carrinho))
+@if (empty($carrinhos))
 	<div class="container text-center">
 		<h1>Não há nenhum item aqui!</h1>
 	</div>
