@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Requisicao;
 use App\User;
 use DB;
+use App\Carrinho;
 
 
 class DoacaoControlador extends Controller
@@ -65,6 +66,13 @@ class DoacaoControlador extends Controller
     public function categoria(Request $data){
         $categoria = Requisicao::where('categoria', $data->categoria)->get();
         return view('doacao.categoria', compact('categoria'));
+    }
+
+    public function finalizarDoacao(){
+        $id = auth()->user()->id;
+        $doacao = Carrinho::join('Requisicoes', 'Requisicoes.idRequisicao', '=', 'carrinho.idRequisicao')
+            ->where('carrinho.id', $id)->get();
+        return view('doacao.confirmar', compact('doacao'));
     }
 
 }

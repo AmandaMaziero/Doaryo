@@ -10,33 +10,39 @@ class CarrinhoControlador extends Controller
 {
     public function index() {
         $id = auth()->user()->id;
-        $carrinho = Carrinho::where('id', $id)->get();
-        foreach($carrinho as $carrinhos){
-            $carrinhos = Requisicao::where('idRequisicao', $carrinho->idRequisicao)->get();
-        }
-        //dd($carrinho);
-        return view('carrinho.index',compact('carrinhos'));
+        $carrinho = Carrinho::join('Requisicoes', 'Requisicoes.idRequisicao', '=', 'carrinho.idRequisicao')
+            ->where('carrinho.id', $id)->get();
+        return view('carrinho.index',compact('carrinho'));
     }
 
     public function criar(Request $request){
-        Carrinho::create([
-            'idRequisicao'=>$request['idRequisicao'],
-            'id'=>auth()->user()->id,
-        ]);
+        $id = auth()->user()->id;
+        $a = Carrinho::select('idRequisicao')
+            ->where('id', $id)
+            ->where('idRequisicao', $request->idRequisicao)
+            ->get();
+        if (count($a) == 0){
+            Carrinho::create([
+                'idRequisicao'=>$request['idRequisicao'],
+                'id'=>auth()->user()->id,
+            ]);
+            
+        }
 
         return redirect('carrinho');
     }
 
-    public function adicionar(){
-
+    public function apagarInd($id){
+        $a = Carrinho::destroy($id);
+        return redirect()->route('carrinho');
     }
 
-    public function removerUm(){
-
-    }
-
-    public function removerTodos(){
-
+    public function apagarTodos(){
+        $id = auth()->user()->id;
+        $a = Carrinho::select('idRequisicao')
+            ->where('id', $id);
+        $a->delete();
+        return redirect('carrinho');
     }
 
 }

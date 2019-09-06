@@ -6,47 +6,47 @@
 	<h1 class='display-1 text-center'>Carrinho Solidário</h1>
 </div>
 <br>
-@if (empty($carrinhos))
+@if (count($carrinho)== 0)
 	<div class="container text-center">
 		<h1>Não há nenhum item aqui!</h1>
 	</div>
 @else
-	@foreach($carrinhos as $carrinho)
-		<div class="container text-center">
-			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th scope="col">Nome</th>
-						<th scope="col">Quantidade</th>
-						<th scope="col">Instituição Solicitante</th>
-					</tr>
-				</thead>
+	<div class="container text-center">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th scope="col">Nome</th>
+					<th scope="col">Instituição Solicitante</th>
+				</tr>
+			</thead>
+	@foreach($carrinho as $carrinhos)
 				<tbody>
 					<tr>
-						<td><strong>{{$carrinho->Nome}}</strong></td>
+						<td><strong>{{$carrinhos->Nome}}</strong></td>
 						<td>
-							<form action="{{route('addCarrinho')}}" method="POST">
-							@csrf
-								<div class="form-group">
-									<input type="number" name="quantdade" class="form-control" value="{{$carrinhos->Quantidade}}">
+							<div class="row">
+								<div class="col">
+									<p>{{$carrinhos->id}}</p>
 								</div>
-							</form>
+								<div class="col">
+									<a href="{{ route('apagarInd', ['idCarrinho' => $carrinhos->idCarrinho]) }}" class="btn btn-dark">Excluir</a>
+								</div>
+							</div>
 						</td>
-						<td>{{$carrinho->id}}</td>
 					</tr>
 				</tbody>
+	@endforeach
 			</table>
 			<br>
 			<div class="row">
-				<div class="col-6">
-					<a href="#" class="btn btn-dark my-2 my-sm-0" type="submit">Apagar Todas</a>
+				<div class="col">
+					<a href="{{ route('apagarTodos') }}" class="btn btn-dark">Apagar Todas</a>
 				</div>
 
-				<div class="col-6">
-					<a href="#" class="btn btn-dark my-2 my-sm-0" type="submit">Finalizar Doação</a>
+				<div class="col">
+					<a href="{{ route('finalizar') }}" class="btn btn-dark">Finalizar Doação</a>
 				</div>
 			</div>
 		</div>
-	@endforeach
 @endif
 @endsection 
