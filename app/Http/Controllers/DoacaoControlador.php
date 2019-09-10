@@ -51,7 +51,6 @@ class DoacaoControlador extends Controller
     }
 
     public function atualizar(Request $request){
-        //dd($request);
         $requisicao = Requisicao::findOrFail($request['idRequisicao']);
         $requisicao->nome = $request['nome'];
         $requisicao->imagem = $request['imagem'];
@@ -72,7 +71,21 @@ class DoacaoControlador extends Controller
         $id = auth()->user()->id;
         $doacao = Carrinho::join('Requisicoes', 'Requisicoes.idRequisicao', '=', 'carrinho.idRequisicao')
             ->where('carrinho.id', $id)->get();
-        return view('doacao.confirmar', compact('doacao'));
+        return view('doacao.finalizar', compact('doacao'));
     }
 
+    public function confirmar(Request $request){
+        if($request->confirmar == 'checked'){
+            Doacao::create([
+                'Produto'=>$requi->nome,
+                'DataDoacao'=>date(),
+                'idDoador'=>auth()->user()->id,
+                'idInst'=>$inst->id,
+            ]);
+        }else{
+            $alerta = "<script>alert('Você deve clicar na caixa de confirmação para confirmar a doação!!!');</script>";
+            echo "<script>alert('Você deve clicar na caixa de confirmação para confirmar a doação!!!');</script>";
+            return redirect()->back()->$alerta;
+        }
+    }
 }

@@ -3,7 +3,7 @@
 
 @section('conteudo')
 <div class="container">
-	<h1 class='display-1 text-center'>Carrinho Solidário</h1>
+	<h1 class='display-1 text-center'>Cesto Solidário</h1>
 </div>
 <br>
 @if (count($carrinho)== 0)

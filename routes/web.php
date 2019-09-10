@@ -74,6 +74,8 @@ Route::get('/instituicoes', ["uses"=>"InstituicoesControlador@index"]);
 
 Route::get('/sobrenos', ["uses"=>"SobrenosControlador@index"]);
 
+Route::get('/termos', ["uses"=>"HomeControlador@termos"])->name('termos');
+
 //carrinho
 
 Route::get('/carrinho/apagar', ["uses"=>"CarrinhoControlador@apagarTodos"])->name('apagarTodos');
@@ -84,6 +86,8 @@ Route::get('/carrinho', ["uses"=>"CarrinhoControlador@index"])->name('carrinho')
 
 Route::get('/carrinho/{id}', ["uses"=>"CarrinhoControlador@apagarInd"])->name('apagarInd');
 
-Route::get('/doacao/confirmar', ["uses"=>"DoacaoControlador@finalizarDoacao"])->name('finalizar');
+Route::get('/doacao/finalizar', ["uses"=>"DoacaoControlador@finalizarDoacao"])->name('finalizar');
+
+Route::post('/doacao/confirmar', ["uses"=>"DoacaoControlador@confirmar"])->name('confirmar');
 
 //Route::get('/', 'HomeController@index')->name('home');
