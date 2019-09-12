@@ -25,7 +25,7 @@
 <div class="panel panel-danger">
     <div class="container text-center">
         <a type="submit" class="btn btn-dark" href="{{ url('perfil') }}">Cancelar</a>
-        <a type="submit" class="btn btn-danger" href="">Excluir</a>
+        <a type="submit" class="btn btn-danger" href="{{route('excluirConta')}}">Excluir</a>
     </div>
 </div>
 

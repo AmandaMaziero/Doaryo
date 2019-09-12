@@ -41,6 +41,15 @@ Route::get('/doacao/requisicao/{idRequisicao}', ["uses"=>"DoacaoControlador@visu
 
 Route::get('/doacao/categoria/{categoria}', ["uses"=>"DoacaoControlador@categoria"])->name('categoria');
 
+Route::get('/doacao/removerTodos', ["uses"=>"DoacaoControlador@apagarTodos"])->name('removerTodos');
+
+Route::get('/doacao/removerUm/{id}', ["uses"=>"DoacaoControlador@apagarUm"])->name('removerUm');
+
+Route::get('/doacao/finalizar', ["uses"=>"DoacaoControlador@finalizarDoacao"])->name('finalizar');
+
+Route::post('/doacao/confirmar', ["uses"=>"DoacaoControlador@confirmar"])->name('confirmar');
+
+
 //perfis
 Route::get('perfil/sair', ["uses"=>"PerfilControlador@sair"])->name('sair');
 
@@ -67,6 +76,8 @@ Route::get('perfil/{id}/destroy', function(){
     return Redirect::to('login');
  });
 
+ Route::get('perfil/excluirConta', ["uses"=>"PerfilControlador@excluirConta"])->name('excluirConta');
+
 //others
 Route::get('/contato', ["uses"=>"ContatoControlador@index"]);
 
@@ -85,9 +96,5 @@ Route::post('/carrinho', ["uses"=>"CarrinhoControlador@criar"])->name('addCarrin
 Route::get('/carrinho', ["uses"=>"CarrinhoControlador@index"])->name('carrinho');
 
 Route::get('/carrinho/{id}', ["uses"=>"CarrinhoControlador@apagarInd"])->name('apagarInd');
-
-Route::get('/doacao/finalizar', ["uses"=>"DoacaoControlador@finalizarDoacao"])->name('finalizar');
-
-Route::post('/doacao/confirmar', ["uses"=>"DoacaoControlador@confirmar"])->name('confirmar');
 
 //Route::get('/', 'HomeController@index')->name('home');

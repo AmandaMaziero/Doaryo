@@ -12,6 +12,11 @@
 	</div>
 @else
 	<div class="container text-center">
+		@if(session()->has('aviso'))
+			<div class="alert alert-danger col-12">
+				{{ session()->get('aviso') }}
+			</div>
+		@endif
 		<table class="table table-bordered">
 			<thead>
 				<tr>
@@ -33,7 +38,7 @@
 			@csrf
                 <div class="form-group">
                     <label for="concorda">Você deve concordar com os nossos <a href="{{route('termos')}}" target="_blank">Termos e Condições</a> para confirmar esta doação</label>
-                    <input type="checkbox" id="concorda" name="concorda">
+                    <input type="checkbox" value="concorda" name="concorda">
                 </div>
 
 				<div class="row">

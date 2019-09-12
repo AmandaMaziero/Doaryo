@@ -39,7 +39,7 @@
                                 <div class="col-6"><p>{{$reqs->Quantidade}}</p></div>
                                 <div class="col-6">
                                     <div class="list-group list-group-horizontal">
-                                        <a class="list-group-item list-group-item-action" href="#">Excluir</a>
+                                        <a class="list-group-item list-group-item-action" href="{{ route('removerUm', ['idRequisicao' => $reqs->idRequisicao]) }}">Excluir</a>
                                         <a class="list-group-item list-group-item-action" href="{{ route('editarRequi', ['idRequisicao' => $reqs->idRequisicao]) }}">Editar</a>
                                     </div>
                                 </div> 
@@ -55,7 +55,7 @@
 
 <div class="container text-center">
     <div class="list-group list-group-horizontal">
-        @if(count($req)!= 0)<a class="list-group-item list-group-item-action" href="#">Excluir todas</a>@endif
+        @if(count($req)!= 0)<a class="list-group-item list-group-item-action" href="{{route('removerTodos')}}">Excluir todas</a>@endif
         <a class="list-group-item list-group-item-action" href="{{route('cadastro')}}">Adicionar Requisição</a>
         <a class="list-group-item list-group-item-action" href="{{route('recebidas')}}">Doações Recebidas</a>
     </div>

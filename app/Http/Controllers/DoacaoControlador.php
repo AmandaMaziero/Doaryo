@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Requisicao;
 use App\User;
-use DB;
+use App\Doacao;
 use App\Carrinho;
 
 
@@ -62,6 +62,19 @@ class DoacaoControlador extends Controller
         return redirect('/perfil');
     }
 
+    public function apagarUm($id){
+        $a = Requisicao::destroy($id);
+        return redirect('perfil');
+    }
+
+    public function apagarTodos(){
+        $id = auth()->user()->id;
+        $a = Requisicao::select('idRequisicao')
+            ->where('id', $id);
+        $a->delete();
+        return redirect('perfil');
+    }
+
     public function categoria(Request $data){
         $categoria = Requisicao::where('categoria', $data->categoria)->get();
         return view('doacao.categoria', compact('categoria'));
@@ -75,17 +88,17 @@ class DoacaoControlador extends Controller
     }
 
     public function confirmar(Request $request){
-        if($request->confirmar == 'checked'){
+        $requi = Carrinho::join('Requisicoes', 'Requisicoes.idRequisicao', '=', 'carrinho.idRequisicao');
+        dd($requi);
+        if($request->concorda == 'concorda'){
             Doacao::create([
-                'Produto'=>$requi->nome,
-                'DataDoacao'=>date(),
+                'idRequisicao'=>$requi->idRequisicao,
+                'dataDoacao'=>date('d/m/Y'),
                 'idDoador'=>auth()->user()->id,
-                'idInst'=>$inst->id,
+                'idInst'=>$requi->id,
             ]);
         }else{
-            $alerta = "<script>alert('Você deve clicar na caixa de confirmação para confirmar a doação!!!');</script>";
-            echo "<script>alert('Você deve clicar na caixa de confirmação para confirmar a doação!!!');</script>";
-            return redirect()->back()->$alerta;
+            return redirect()->back()->with('aviso','Você deve clicar na caixa de confirmação para confirmar a doação!!!');
         }
     }
 }

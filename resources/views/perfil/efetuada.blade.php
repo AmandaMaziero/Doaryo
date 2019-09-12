@@ -26,7 +26,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Requisição</th>
+                        <th scope="col">Requisições Recebidas</th>
                     </tr>
                 </thead>
         @foreach($req as $reqs)

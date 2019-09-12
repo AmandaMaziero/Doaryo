@@ -19,6 +19,7 @@
 		<div class="col">
 			<img src="{{ asset('imagens/{$requi->Imagem}') }}" alt="{{$requi->Nome}}" style="width:50%;">
 		</div>
+	@if(auth()->user()->type == "user")
 		<div class="col">
 			<form action="{{ route('addCarrinho') }}" method="POST">
 			@csrf
@@ -31,6 +32,7 @@
 				</div> 
 			</form>
 		</div>
+	@endif
 
 	</div>
 </div>

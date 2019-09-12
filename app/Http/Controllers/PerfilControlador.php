@@ -84,5 +84,11 @@ class PerfilControlador extends Controller
         $req = Requisicao::where ('id', $id)->where ('status', 'Efetuada')->get();
         return view('perfil.efetuada',compact('id', 'req'));
     }
+
+    public function excluirConta(){
+        $id = auth()->user()->id;
+        Requisicao::destroy($id);
+        return redirect('home');
+    }
     
 }
