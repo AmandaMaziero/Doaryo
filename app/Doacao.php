@@ -9,9 +9,9 @@ class Doacao extends Model
     protected $table = 'doacao';
     public $timestamps = false;
     protected $fillable = [
-        'idDoacao', 'idRequisicao', 'dataDoacao', 'idDoador', 'idInst'];
+        'idDoacao', 'dataDoacao', 'idDoador'];
     protected $primaryKey = 'idDoacao';
-    protected $guarded = ['idDoacao','idRequisicao', 'idDoador','idInst'];
+    protected $guarded = ['idDoacao','idDoador'];
 }
 
 ?>

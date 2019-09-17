@@ -33,7 +33,7 @@ class DoacaoControlador extends Controller
     public function visualizar(Request $data){
         $requisicao = Requisicao::join('users', 'users.id', '=', 'Requisicoes.id')
             ->where('idRequisicao', $data->idRequisicao)->get();
-        return view('doacao.requisicao', compact('requisicao', 'user'));
+        return view('doacao.requisicao', compact('requisicao'));
     }
 
     public function adicionar(Request $request){
@@ -88,15 +88,25 @@ class DoacaoControlador extends Controller
     }
 
     public function confirmar(Request $request){
-        $requi = Carrinho::join('Requisicoes', 'Requisicoes.idRequisicao', '=', 'carrinho.idRequisicao');
-        dd($requi);
+        $id = auth()->user()->id;
+        $requi = Carrinho::select('carrinho.idRequisicao','Requisicoes.id')
+        ->join('Requisicoes', 'Requisicoes.idRequisicao', '=', 'carrinho.idRequisicao')
+        ->where('carrinho.id', $id)->get();
         if($request->concorda == 'concorda'){
             Doacao::create([
-                'idRequisicao'=>$requi->idRequisicao,
                 'dataDoacao'=>date('d/m/Y'),
                 'idDoador'=>auth()->user()->id,
-                'idInst'=>$requi->id,
-            ]);
+            ])->save();
+            
+            $doacao = Doacao::select('idDoacao')->where('idDoador', $id)->get();
+            foreach ($requi as $requis){
+                itemDoado::create([
+                    'idDoacao'=>$doacao
+                    'idDoador'=>auth()->user()->id
+                    'idRequisicao'=>$requis->'idRequisicao'
+                    'idInst'=>$requis->id,
+                ])
+            }
         }else{
             return redirect()->back()->with('aviso','Você deve clicar na caixa de confirmação para confirmar a doação!!!');
         }
