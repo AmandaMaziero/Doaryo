@@ -7,6 +7,7 @@ use App\Requisicao;
 use App\User;
 use App\Doacao;
 use App\Carrinho;
+use App\itemDoado;
 
 
 class DoacaoControlador extends Controller
@@ -93,20 +94,28 @@ class DoacaoControlador extends Controller
         ->join('Requisicoes', 'Requisicoes.idRequisicao', '=', 'carrinho.idRequisicao')
         ->where('carrinho.id', $id)->get();
         if($request->concorda == 'concorda'){
-            Doacao::create([
-                'dataDoacao'=>date('d/m/Y'),
+
+            $doacao = Doacao::create([
+                'dataDoacao'=>date('Y-m-d'),
                 'idDoador'=>auth()->user()->id,
-            ])->save();
+            ]);
+
+            $idDoacao = $doacao->idDoacao;
             
-            $doacao = Doacao::select('idDoacao')->where('idDoador', $id)->get();
-            foreach ($requi as $requis){
+            foreach ($requi as $requis => $value){
+            //dd($requis);
                 itemDoado::create([
-                    'idDoacao'=>$doacao
-                    'idDoador'=>auth()->user()->id
-                    'idRequisicao'=>$requis->'idRequisicao'
-                    'idInst'=>$requis->id,
-                ])
+                    'idDoacao'=>$idDoacao,
+                    'idDoador'=>$id,
+                    'idRequisicao'=>$value['idRequisicao'],
+                    'idInst'=>$value['id'],
+                ]);
             }
+
+            $removerCarrinho = Carrinho::select('idRequisicao')
+            ->where('id', $id);
+            $removerCarrinho->delete();
+            return redirect(route('home'))->with('sucesso','Sua doação foi efetuada com sucesso!!!');
         }else{
             return redirect()->back()->with('aviso','Você deve clicar na caixa de confirmação para confirmar a doação!!!');
         }

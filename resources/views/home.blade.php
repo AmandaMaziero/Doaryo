@@ -8,6 +8,11 @@
 </div>
 <br>
 <div class="container text-center">
+    @if(session()->has('sucesso'))
+			<div class="alert alert-success col-12">
+				{{ session()->get('sucesso') }}
+			</div>
+	@endif
     <h2>Seja Bem-Vindo ao site Doáryo</h2>
     <h3>Quem você deseja ajudar?</h3>
 </div>

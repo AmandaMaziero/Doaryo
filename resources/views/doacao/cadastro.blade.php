@@ -31,7 +31,7 @@ $action = route('adicionar');
 						<option selected>Escolha de acordo com a sua requisição...</option>
 						<option value="roupas">Roupas</option>
 						<option value="sapatos">Sapatos</option>
-						<option value="alimentos">Alimentos não perecíveis</option>
+						<option value="alimentos">Produtos não perecíveis</option>
 						<option value="brinquedos">Brinquedos</option>
 						<option value="racoes">Rações</option>
 						<option value="utensilios">Utensílios de animais no geral</option>
