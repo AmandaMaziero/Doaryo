@@ -120,4 +120,9 @@ class DoacaoControlador extends Controller
             return redirect()->back()->with('aviso','Você deve clicar na caixa de confirmação para confirmar a doação!!!');
         }
     }
+
+    public function pesquisar(Request $request){
+        //$search = Requisicao::all()->orWhere('Nome', 'like', '%' . $request->pesquisa)->get();
+        return view('doacao.pesquisa', compact('search'));
+    }
 }

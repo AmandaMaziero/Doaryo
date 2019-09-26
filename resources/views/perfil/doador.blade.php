@@ -18,22 +18,30 @@
 <br><br>
 
 <div class="container text-center">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th scope="col">Produto Doado</th>
-                <th scope="col">Instituição</th>
-                <th scope="col">Data</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>UIPA</td>
-                <td>12/12/2018</td>
-            </tr>
-        </tbody>
-    </table>
+    @if(!count($doa) == 0)
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Produto Doado</th>
+                    <th scope="col">Instituição</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Confirmação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($doa as $doas)
+                <tr>
+                    <td>{{$doas->Nome}}</td>
+                    <td>{{$doas->name}}</td>
+                    <td>{{$doas->dataDoacao}}</td>
+                    <td>Recebido</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @else
+        <h1>Você não realizou nenhuma doação!!!</h1>
+    @endif
 </div>
 
 @endsection 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Requisicao;
+use App\itemDoado;
 
 class PerfilControlador extends Controller
 {   
@@ -42,10 +43,16 @@ class PerfilControlador extends Controller
         $id = auth()->user()->id;
         $type = auth()->user()->type;
         $req = Requisicao::where ('id', $id)->where ('status', 'Pendente')->get();
+        $doa = itemDoado::select('Requisicoes.Nome', 'users.name', 'doacao.dataDoacao')
+        ->join('Requisicoes', 'Requisicoes.idRequisicao', '=', 'itemDoado.idRequisicao')
+        ->join('doacao', 'doacao.idDoacao', '=', 'itemDoado.idDoacao')
+        ->join('users', 'users.id', '=', 'Requisicoes.id')
+        ->where ('itemDoado.idDoador', $id)->get();
+    
         if ($type=="admin"){
             return view('perfil.admin',compact('id')); 
         }elseif($type=="user"){
-            return view('perfil.doador',compact('id'));
+            return view('perfil.doador',compact('id', 'doa'));
         }else{
             return view('perfil.inst',compact('id', 'req'));
         }
