@@ -8,6 +8,7 @@ use App\User;
 use App\Doacao;
 use App\Carrinho;
 use App\itemDoado;
+use DB;
 
 
 class DoacaoControlador extends Controller
@@ -122,7 +123,8 @@ class DoacaoControlador extends Controller
     }
 
     public function pesquisar(Request $request){
-        //$search = Requisicao::all()->orWhere('Nome', 'like', '%' . $request->pesquisa)->get();
+        $search = Requisicao::where('Nome', 'like', '%'.$request->pesquisa.'%')->get();
+        //dd($search);
         return view('doacao.pesquisa', compact('search'));
     }
 }

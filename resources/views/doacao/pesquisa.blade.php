@@ -17,10 +17,10 @@
             @foreach ($search as $searchs)
                 <div class="col-4 p-2">
                     <div class="card" style="width: 15rem;">
-                        <img src="{{ asset('imagens/{$requi->Categoria}') }}" class="card-img-top">
+                        <img src="{{ asset('imagens/{$searchs->Imagem}') }}" class="card-img-top" alt="{{$searchs->Nome}}">
                         <div class="card-body">
-                            <h5 class="card-title">{{$search->Nome}}</h5>
-                            <a href="{{ route('requisicao', ['idRequisicao' => $search->idRequisicao]) }}" class="btn btn-dark">Saber mais...</a>
+                            <h5 class="card-title">{{$searchs->Nome}}</h5>
+                            <a href="{{ route('requisicao', ['idRequisicao' => $searchs->idRequisicao]) }}" class="btn btn-dark">Saber mais...</a>
                         </div>
                     </div>
                 </div>

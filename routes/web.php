@@ -49,7 +49,7 @@ Route::get('/doacao/finalizar', ["uses"=>"DoacaoControlador@finalizarDoacao"])->
 
 Route::post('/doacao/confirmar', ["uses"=>"DoacaoControlador@confirmar"])->name('confirmar');
 
-Route::get('/pesquisa', ["uses"=>"DoacaoControlador@pesquisar"])->name('pesquisar');
+Route::get('doacao/pesquisa', ["uses"=>"DoacaoControlador@pesquisar"])->name('pesquisar');
 
 
 //perfis

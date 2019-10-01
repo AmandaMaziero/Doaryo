@@ -32,7 +32,7 @@
             @foreach ($categoria as $cate)
                 <div class="col-4 p-2">
                     <div class="card" style="width: 15rem;">
-                        <img src="{{ asset('imagens/{$cate->Categoria}') }}" class="card-img-top">
+                        <img src="{{ asset('imagens/{$cate->Imagem}') }}" class="card-img-top" alt="{{$requi->Nome}}">
                         <div class="card-body">
                             <h5 class="card-title">{{$cate->Nome}}</h5>
                             <a href="{{ route('requisicao', ['idRequisicao' => $cate->idRequisicao]) }}" class="btn btn-dark">Saber mais...</a>,

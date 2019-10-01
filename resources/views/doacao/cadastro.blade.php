@@ -29,12 +29,12 @@ $action = route('adicionar');
 					<label for="imagem">Imagem</label>
 					<select class="form-control" name="imagem">
 						<option selected>Escolha de acordo com a sua requisição...</option>
-						<option value="roupas">Roupas</option>
-						<option value="sapatos">Sapatos</option>
-						<option value="alimentos">Produtos não perecíveis</option>
-						<option value="brinquedos">Brinquedos</option>
-						<option value="racoes">Rações</option>
-						<option value="utensilios">Utensílios de animais no geral</option>
+						<option value="roupas.jpg">Roupas</option>
+						<option value="sapatos.jpg">Sapatos</option>
+						<option value="alimentos.jpg">Produtos não perecíveis</option>
+						<option value="brinquedos.jpg">Brinquedos</option>
+						<option value="racoes.jpg">Rações</option>
+						<option value="utensilios.jpg">Utensílios de animais no geral</option>
 					</select>
 				</div>
 			</div>
