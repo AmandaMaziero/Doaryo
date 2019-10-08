@@ -17,7 +17,7 @@
 <div class="container text-center">
 	<div class="row">
 		<div class="col">
-			<img src="{{ asset('imagens/{$requi->Imagem}') }}" alt="{{$requi->Nome}}" style="width:50%;">
+			<img src="{{asset("imagens/$requi->Imagem")}}" alt="{{$requi->Nome}}" style="width:50%;">
 		</div>
 	@if(auth()->user()->type == "user")
 		<div class="col">

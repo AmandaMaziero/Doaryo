@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Requisicao;
 use App\itemDoado;
+use App\Doacao;
+use App\Carrinho;
 
 class PerfilControlador extends Controller
 {   
@@ -94,7 +96,11 @@ class PerfilControlador extends Controller
 
     public function excluirConta(){
         $id = auth()->user()->id;
-        Requisicao::destroy($id);
+        itemDoado::where("idDoador", "=", $id)->delete();
+        Doacao::where("idDoador", "=", $id)->delete();
+        Carrinho::where("id", "=", $id)->delete();
+        Requisicao::where("id", "=", $id)->delete();
+        User::where("id", "=", $id)->delete();
         return redirect('home');
     }
     

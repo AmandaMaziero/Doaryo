@@ -4,7 +4,7 @@
 @section('conteudo')
 
 <div class="container">
-    <h1 class='display-1 text-center'>Doações</h1>
+    <h1 class='display-1 text-center'>Pesquisa</h1>
 </div>
 
 <div class="container text-center">
@@ -17,7 +17,7 @@
             @foreach ($search as $searchs)
                 <div class="col-4 p-2">
                     <div class="card" style="width: 15rem;">
-                        <img src="{{ asset('imagens/{$searchs->Imagem}') }}" class="card-img-top" alt="{{$searchs->Nome}}">
+                        <img src="{{asset("imagens/$searchs->Imagem")}}" class="card-img-top" alt="{{$searchs->Nome}}">
                         <div class="card-body">
                             <h5 class="card-title">{{$searchs->Nome}}</h5>
                             <a href="{{ route('requisicao', ['idRequisicao' => $searchs->idRequisicao]) }}" class="btn btn-dark">Saber mais...</a>
