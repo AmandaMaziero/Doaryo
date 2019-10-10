@@ -32,12 +32,12 @@ $action = route('atualizar');
 					<label>Imagem</label>
 					<select class="form-control" name="imagem">
 						<option selected>Escolha de acordo com a sua requisição...</option>
-						<option value="roupas">Roupas</option>
-						<option value="sapatos">Sapatos</option>
-						<option value="alimentos">Alimentos não perecíveis</option>
-						<option value="brinquedos">Brinquedos</option>
-						<option value="racoes">Rações</option>
-						<option value="utensilios">Utensílios de animais no geral</option>
+						<option value="roupas.jpg">Roupas</option>
+						<option value="sapatos.jpg">Sapatos</option>
+						<option value="alimentos.jpg">Alimentos não perecíveis</option>
+						<option value="brinquedos.jpg">Brinquedos</option>
+						<option value="racoes.jpg">Rações</option>
+						<option value="utensilios.jpg">Utensílios de animais no geral</option>
 					</select>
 				</div>
 			</div>
@@ -70,6 +70,7 @@ $action = route('atualizar');
 					<select class="form-control" name="status">
 						<option selected>Qual o status atual desta requisição?</option>
 						<option value="Pendente">Pendente</option>
+						<option value="Aguardo">Aguardando entrega</option>
 						<option value="Efetuada">Efetuada</option>
 					</select>
 				</div>

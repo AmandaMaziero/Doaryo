@@ -65,7 +65,7 @@ $action = route('adicionar');
 			
 		</div>
 <br>
-		<button class="btn btn-dark" type="submit">Cadastrar</button>
+		<button class="btn btn-success" type="submit">Cadastrar</button>
 	</form>
 </div>
 

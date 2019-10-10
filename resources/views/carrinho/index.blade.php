@@ -26,10 +26,10 @@
 						<td>
 							<div class="row">
 								<div class="col">
-									<p>{{$carrinhos->id}}</p>
+									<p>{{$carrinhos->name}}</p>
 								</div>
 								<div class="col">
-									<a href="{{ route('apagarInd', ['idCarrinho' => $carrinhos->idCarrinho]) }}" class="btn btn-dark">Excluir</a>
+									<a href="{{ route('apagarInd', ['idCarrinho' => $carrinhos->idCarrinho]) }}" class="btn btn-danger">Excluir</a>
 								</div>
 							</div>
 						</td>
@@ -40,7 +40,7 @@
 			<br>
 			<div class="row">
 				<div class="col">
-					<a href="{{ route('apagarTodos') }}" class="btn btn-dark">Apagar Todas</a>
+					<a href="{{ route('apagarTodos') }}" class="btn btn-danger">Apagar Todas</a>
 				</div>
 
 				<div class="col">

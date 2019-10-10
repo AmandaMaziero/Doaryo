@@ -45,7 +45,7 @@ class PerfilControlador extends Controller
         $id = auth()->user()->id;
         $type = auth()->user()->type;
         $req = Requisicao::where ('id', $id)->where ('status', 'Pendente')->get();
-        $doa = itemDoado::select('Requisicoes.Nome', 'users.name', 'doacao.dataDoacao')
+        $doa = itemDoado::select('Requisicoes.Nome', 'users.name', 'doacao.dataDoacao', 'Requisicoes.Status')
         ->join('Requisicoes', 'Requisicoes.idRequisicao', '=', 'itemDoado.idRequisicao')
         ->join('doacao', 'doacao.idDoacao', '=', 'itemDoado.idDoacao')
         ->join('users', 'users.id', '=', 'Requisicoes.id')
@@ -92,6 +92,12 @@ class PerfilControlador extends Controller
         $id = auth()->user()->id;
         $req = Requisicao::where ('id', $id)->where ('status', 'Efetuada')->get();
         return view('perfil.efetuada',compact('id', 'req'));
+    }
+
+    public function aguardo(){
+        $id = auth()->user()->id;
+        $req = Requisicao::where ('id', $id)->where ('status', 'Aguardo')->get();
+        return view('perfil.aguardo',compact('id', 'req'));
     }
 
     public function excluirConta(){

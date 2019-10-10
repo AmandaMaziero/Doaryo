@@ -10,15 +10,15 @@
 <div class="container text-center">
     <div class="list-group list-group-horizontal">
         @if($type == "admin")
-            <a class="list-group-item list-group-item-action" href="{{ url('perfil') }}">Verificar</a>
+            <a class="list-group-item list-group-item-action btn btn-secondary" href="{{ url('perfil') }}">Verificar</a>
         @elseif($type == "user")
-            <a class="list-group-item list-group-item-action" href="{{ url('perfil') }}">Doações</a>
+            <a class="list-group-item list-group-item-action btn btn-secondary" href="{{ url('perfil') }}">Doações</a>
         @else
-            <a class="list-group-item list-group-item-action" href="{{ url('perfil') }}">Requisições</a>
+            <a class="list-group-item list-group-item-action btn btn-secondary" href="{{ url('perfil') }}">Requisições</a>
         @endif
-        <a class="list-group-item list-group-item-action" href="{{ route('editar', $id) }}">Editar Perfil</a>
-        <a class="list-group-item list-group-item-action" href="{{ route('sair')}}">Sair da Conta</a>
-        <a class="list-group-item list-group-item-action" href="{{ route('excluir', $id) }}">Excluir Conta</a>
+        <a class="list-group-item list-group-item-action btn btn-warning" href="{{ route('editar', $id) }}">Editar Perfil</a>
+        <a class="list-group-item list-group-item-action btn btn-secondary" href="{{ route('sair')}}">Sair da Conta</a>
+        <a class="list-group-item list-group-item-action btn btn-danger" href="{{ route('excluir', $id) }}">Excluir Conta</a>
     </div>
 </div>
 <br><br>

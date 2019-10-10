@@ -104,13 +104,19 @@ class DoacaoControlador extends Controller
             $idDoacao = $doacao->idDoacao;
             
             foreach ($requi as $requis => $value){
-            //dd($requis);
+            
                 itemDoado::create([
                     'idDoacao'=>$idDoacao,
                     'idDoador'=>$id,
                     'idRequisicao'=>$value['idRequisicao'],
                     'idInst'=>$value['id'],
                 ]);
+
+                $status = Requisicao::findOrFail($value->idRequisicao);
+                $status->status = 'Aguardo';
+                $status->save();
+
+
             }
 
             $removerCarrinho = Carrinho::select('idRequisicao')

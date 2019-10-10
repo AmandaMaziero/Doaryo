@@ -24,13 +24,7 @@
                         <td>
                             <div class="row">
                                 <div class="col-6"><p>{{$users->name}}</p></div>
-                                <div class="col-6">
-                                    <div class="list-group list-group-horizontal">
-
-                                        <a class="list-group-item list-group-item-action" href="#">Excluir</a>
-                                        <a class="list-group-item list-group-item-action" href="{{ route('editar', $users->id) }}">Editar</a>
-                                    </div>
-                                </div> 
+                                <div class="col-6"><p>{{$users->email}}</p></div> 
                             </div>    
                         </td>
                     </tr>

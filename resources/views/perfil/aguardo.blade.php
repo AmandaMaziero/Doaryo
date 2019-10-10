@@ -21,22 +21,33 @@
 
 <div class="container text-center">
     @if(count($req) == 0) 
-        <h1>Não há doações recebidas</h1>
+        <h1>Não há requisições em aguardo</h1>
     @else
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">Requisições Recebidas</th>
-                    </tr>
-                </thead>
-        @foreach($req as $reqs)
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Requisição</th>
+                    <th scope="col">Alterar Status</th>
+                </tr>
+            </thead>
+            @foreach($req as $reqs)
                 <tbody>
                     <tr>
                         <td>{{$reqs->Nome}}</td>
+                        <td>
+                            <div class="row">
+                                <div class="col-md-6">  
+                                    <p>{{$reqs->Status}}</p> 
+                                </div>
+                                <div class="col-md-6">                        
+                                    <a class="btn btn-warning" href="{{ route('editarRequi', ['idRequisicao' => $reqs->idRequisicao]) }}">Editar</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
-        @endforeach 
-            </table>      
+            @endforeach 
+        </table>      
     @endif
 </div>
 <br><br>

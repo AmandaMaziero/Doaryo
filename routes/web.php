@@ -67,6 +67,8 @@ Route::get('/perfil/dadosInst', ["uses"=>"PerfilControlador@VerificarInstituicoe
 
 Route::get('/perfil/efetuada', ["uses"=>"PerfilControlador@recebidas"])->name('recebidas');
 
+Route::get('/perfil/aguardo', ["uses"=>"PerfilControlador@aguardo"])->name('aguardo');
+
 Route::get('perfil/{id}/editar', ["uses"=>"PerfilControlador@editar"])->name('editar');
 
 Route::get('perfil/{id}/excluir', ["uses"=>"PerfilControlador@excluir"])->name('excluir');

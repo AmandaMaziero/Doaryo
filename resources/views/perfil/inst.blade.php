@@ -11,10 +11,10 @@
 <div class="container text-center">
 
     <div class="list-group list-group-horizontal">
-        <a class="list-group-item list-group-item-action" href="{{ url('perfil') }}">Requisições Pendentes</a>
-        <a class="list-group-item list-group-item-action" href="{{ route('editar', $id) }}">Editar Perfil</a>
-        <a class="list-group-item list-group-item-action" href="{{ route('sair')}}">Sair da Conta</a>
-        <a class="list-group-item list-group-item-action" href="{{ route('excluir', $id) }}">Excluir Conta</a>
+        <a class="list-group-item list-group-item-action btn btn-secondary" href="{{ url('perfil') }}">Requisições Pendentes</a>
+        <a class="list-group-item list-group-item-action btn btn-warning" href="{{ route('editar', $id) }}">Editar Perfil</a>
+        <a class="list-group-item list-group-item-action btn btn-secondary" href="{{ route('sair')}}">Sair da Conta</a>
+        <a class="list-group-item list-group-item-action btn btn-danger" href="{{ route('excluir', $id) }}">Excluir Conta</a>
     </div>
 </div>
 <br><br>
@@ -57,6 +57,7 @@
         @if(count($req)!= 0)<a class="list-group-item list-group-item-action btn btn-danger" href="{{route('removerTodos')}}">Excluir todas</a>@endif
         <a class="list-group-item list-group-item-action btn btn-secondary" href="{{route('cadastro')}}">Adicionar Requisição</a>
         <a class="list-group-item list-group-item-action btn btn-success" href="{{route('recebidas')}}">Doações Recebidas</a>
+        <a class="list-group-item list-group-item-action btn btn-warning" href="{{route('aguardo')}}">Doações em Espera</a>
     </div>
 </div>
 @endsection 

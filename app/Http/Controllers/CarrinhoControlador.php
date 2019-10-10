@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Carrinho;
 use App\Requisicao;
+use App\User;
 
 class CarrinhoControlador extends Controller
 {
     public function index() {
         $id = auth()->user()->id;
         $carrinho = Carrinho::join('Requisicoes', 'Requisicoes.idRequisicao', '=', 'carrinho.idRequisicao')
-            ->where('carrinho.id', $id)->get();
+        ->join('users', 'users.id', '=', 'Requisicoes.id')
+        ->where('carrinho.id', $id)->get();
         return view('carrinho.index',compact('carrinho'));
     }
 
