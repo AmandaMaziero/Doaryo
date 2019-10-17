@@ -43,11 +43,11 @@
 
 				<div class="row">
 					<div class="col">
-						<a href="{{route('carrinho')}}" class="btn btn-dark">Voltar</a>
+						<a href="{{route('carrinho')}}" class="btn btn-danger">Voltar</a>
 					</div>
 
 					<div class="col">
-						<button type="submit" class="btn btn-dark">Confirmar</button>
+						<button type="submit" class="btn btn-success">Confirmar</button>
 					</div>
 				</div>
 				

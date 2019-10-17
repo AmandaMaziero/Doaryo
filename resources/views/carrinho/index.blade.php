@@ -44,7 +44,7 @@
 				</div>
 
 				<div class="col">
-					<a href="{{ route('finalizar') }}" class="btn btn-dark">Finalizar Doação</a>
+					<a href="{{ route('finalizar') }}" class="btn btn-success">Finalizar Doação</a>
 				</div>
 			</div>
 		</div>

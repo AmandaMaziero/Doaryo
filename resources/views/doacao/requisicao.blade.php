@@ -28,7 +28,7 @@
 				</div>
 
 				<div class="form-group">
-					<button class="btn btn-dark">Adicionar ao Cesto</button>
+					<button class="btn btn-success">Adicionar ao Cesto</button>
 				</div> 
 			</form>
 		</div>
