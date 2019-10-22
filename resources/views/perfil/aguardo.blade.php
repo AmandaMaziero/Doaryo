@@ -56,7 +56,7 @@
     <div class="list-group list-group-horizontal">
         <a class="list-group-item list-group-item-action btn btn-secondary" href="{{route('cadastro')}}">Adicionar Requisição</a>
         <a class="list-group-item list-group-item-action btn btn-success" href="{{route('recebidas')}}">Doações Recebidas</a>
-        <a class="list-group-item list-group-item-action btn btn-warning" href="{{route('aguardo')}}">Doações em Espera</a>
+        <a class="list-group-item list-group-item-action btn btn-warning" href="{{route('aguardo')}}">Requisições em Espera</a>
     </div>
 </div>
 @endsection 

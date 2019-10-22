@@ -19,21 +19,24 @@
 		<div class="col">
 			<img src="{{asset("imagens/$requi->Imagem")}}" alt="{{$requi->Nome}}" style="width:50%;">
 		</div>
-	@if(auth()->user()->type == "user")
-		<div class="col">
-			<form action="{{ route('addCarrinho') }}" method="POST">
-			@csrf
-				<div class="form-group">    
-					<input type="hidden" class="form-control" name="idRequisicao" value="{{$requi->idRequisicao}}">
+	@if (Route::has('login'))
+        @auth
+			@if(auth()->user()->type == 'user')
+				<div class="col">
+					<form action="{{ route('addCarrinho') }}" method="POST">
+					@csrf
+						<div class="form-group">    
+							<input type="hidden" class="form-control" name="idRequisicao" value="{{$requi->idRequisicao}}">
+						</div>
+
+						<div class="form-group">
+							<button class="btn btn-success">Adicionar ao Cesto</button>
+						</div> 
+					</form>
 				</div>
-
-				<div class="form-group">
-					<button class="btn btn-success">Adicionar ao Cesto</button>
-				</div> 
-			</form>
-		</div>
+			@endif
+		@endauth
 	@endif
-
 	</div>
 </div>
 	@endforeach
