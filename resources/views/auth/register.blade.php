@@ -59,7 +59,6 @@
                 </div>
             </div>
         </div>
-        <input type="hidden" class="form-control" name="type" value="user">
         <div class="form-group">
              <button type="submit" class="btn btn-dark">{{ __('Register') }}</button>
         </div>   

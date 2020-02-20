@@ -55,10 +55,16 @@
                 </div>
             </div>
 
-            <div class="row">  
+            <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="password">{{ __('Password') }}</label>
+                        <label for="old-password">{{ __('Old Password') }}</label>
+                        <input type="password" id="old-password" minlength="8" maxlength="16" class="form-control" name="old-password">
+                    </div>
+                </div>  
+                <div class="col">
+                    <div class="form-group">
+                        <label for="password">{{ __('New Password') }}</label>
                         <input type="password" id="password" minlength="8" maxlength="16" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" value="{{ $users->password }}">
                         @error('password')
                             <span class="invalid-feedback" role="alert">

@@ -75,7 +75,7 @@ class PerfilControlador extends Controller
     public function atualizar(Request $request){
         //dd($request);
         if($request['password'] == $request['password_confirmation']){
-            //dd($request);
+            dd($request);
             $user = User::findOrFail($request['id']);
             $user->name = $request['name'];
             $user->email = $request['email'];
