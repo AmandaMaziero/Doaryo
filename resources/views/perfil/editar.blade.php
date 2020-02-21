@@ -65,7 +65,7 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="password">{{ __('New Password') }}</label>
-                        <input type="password" id="password" minlength="8" maxlength="16" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" value="{{ $users->password }}">
+                        <input type="password" id="password" minlength="8" maxlength="16" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                         @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

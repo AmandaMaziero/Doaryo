@@ -15,18 +15,26 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">Usuários</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Tipo de Usuário</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($user as $users)
                     <tr>
+                        <td><p>{{$users->name}}</p></td>
+                        <td><p>{{$users->email}}</p></td> 
                         <td>
                             <div class="row">
-                                <div class="col-6"><p>{{$users->name}}</p></div>
-                                <div class="col-6"><p>{{$users->email}}</p></div> 
-                            </div>    
-                        </td>
+                                <div class="col">
+                                    <p>{{$users->type}}</p>
+                                </div>
+                                <div class="col">
+                                    <a href="{{ route('alterarTipo', ['id' => $users->id]) }}" class="btn btn-dark">Alterar tipo de Usuário</a>
+                                </div>
+                            </div>
+                        </td>      
                     </tr>
                 @endforeach
             </tbody>

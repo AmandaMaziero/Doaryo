@@ -82,6 +82,8 @@ Route::get('perfil/{id}/destroy', function(){
 
  Route::get('perfil/excluirConta', ["uses"=>"PerfilControlador@excluirConta"])->name('excluirConta');
 
+Route::get('perfil/alterarTipo/{id}', ["uses"=>"PerfilControlador@alterarTipo"])->name('alterarTipo');
+
 //others
 Route::get('/contato', ["uses"=>"ContatoControlador@index"]);
 

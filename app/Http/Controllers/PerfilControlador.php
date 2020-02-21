@@ -73,19 +73,24 @@ class PerfilControlador extends Controller
     }
 
     public function atualizar(Request $request){
-        //dd($request);
-        if($request['password'] == $request['password_confirmation']){
-            dd($request);
-            $user = User::findOrFail($request['id']);
-            $user->name = $request['name'];
-            $user->email = $request['email'];
-            $user->password = Hash::make($request['password']);
-            $user->type = $request['type'];
-            $user->save();
-            return redirect('/perfil');
+        $id = auth()->user()->id;
+        $senha = User::where('id', $id)->get('password');
+        if (Hash::check($request['old-password'], $senha[0]->password)){
+            if($request['password'] == $request['password_confirmation']){
+                $user = User::findOrFail($request['id']);
+                $user->name = $request['name'];
+                $user->email = $request['email'];
+                $user->password = Hash::make($request['password']);
+                $user->type = $request['type'];
+                $user->save();
+                return redirect('/perfil');
+            }else{
+                return redirect()->back()->with('aviso','Há algum erro nos dados cadastrais.');
+            }
         }else{
-            echo "erro";
+            return redirect()->back()->with('aviso','A senha digitada não corresponde a antiga.');
         }
+        
     }
 
     public function recebidas(){
@@ -108,6 +113,10 @@ class PerfilControlador extends Controller
         Requisicao::where("id", "=", $id)->delete();
         User::where("id", "=", $id)->delete();
         return redirect('home');
+    }
+
+    public function alterarTipo(){
+        
     }
     
 }
