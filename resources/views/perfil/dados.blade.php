@@ -18,6 +18,7 @@
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Tipo de Usuário</th>
+                    <th>Alterar Tipo</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,13 +26,17 @@
                     <tr>
                         <td><p>{{$users->name}}</p></td>
                         <td><p>{{$users->email}}</p></td> 
+                        <td><p>{{$users->type}}</p></td>
                         <td>
                             <div class="row">
                                 <div class="col">
-                                    <p>{{$users->type}}</p>
+                                    <a href="{{ route('alterarAdmin', ['id' => $users->id]) }}" class="btn btn-dark">Administrador</a>
                                 </div>
                                 <div class="col">
-                                    <a href="{{ route('alterarTipo', ['id' => $users->id]) }}" class="btn btn-dark">Alterar tipo de Usuário</a>
+                                    <a href="{{ route('alterarInst', ['id' => $users->id]) }}" class="btn btn-dark">Instituição</a>
+                                </div>
+                                <div class="col">
+                                    <a href="{{ route('alterarDoador', ['id' => $users->id]) }}" class="btn btn-dark">Doador</a>
                                 </div>
                             </div>
                         </td>      

@@ -34,6 +34,6 @@ class ItemDoado extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doacao');
+        Schema::dropIfExists('itemDoado');
     }
 }

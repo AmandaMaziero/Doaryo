@@ -22,6 +22,17 @@
     </div>
 </div>
 <br><br>
+<div class="container text-center">
+    @if(session()->has('aviso1'))
+        <div class="alert alert-danger col-12">
+            {{ session()->get('aviso1') }}
+        </div>
+    @elseif(session()->has('aviso2'))
+        <div class="alert alert-danger col-12">
+			{{ session()->get('aviso2') }}
+		</div>
+	@endif
+</div>
 
 <div class="container text-center">
     @foreach($user as $users)

@@ -85,10 +85,10 @@ class PerfilControlador extends Controller
                 $user->save();
                 return redirect('/perfil');
             }else{
-                return redirect()->back()->with('aviso','Há algum erro nos dados cadastrais.');
+                return redirect()->back()->with('aviso1','Há algum erro nos dados cadastrais.');
             }
         }else{
-            return redirect()->back()->with('aviso','A senha digitada não corresponde a antiga.');
+            return redirect()->back()->with('aviso2','A senha digitada não corresponde a antiga.');
         }
         
     }
@@ -115,8 +115,16 @@ class PerfilControlador extends Controller
         return redirect('home');
     }
 
-    public function alterarTipo(){
-        
+    public function alterarTipo($id){
+        $user = User::findOrFail($id);
+        if (route('alterarInst')){
+            $user->type = 'inst';
+        }elseif(route('alterarAdmin')){
+            $user->type = 'admin';
+        }elseif(route('alterarDoador')){
+            $user->type = 'user';
+        }
+        return redirect()->back();
     }
     
 }
