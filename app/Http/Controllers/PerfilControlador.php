@@ -60,16 +60,18 @@ class PerfilControlador extends Controller
         }
     }
 
-    public function VerificarDoadores(){
-        $data = "user";
-        $user = User::where('type', $data)->get();
-        return view('perfil.dados', compact('user'));
-    }
-
-    public function VerificarInstituicoes(){
-        $data = "inst";
-        $user = User::where('type', $data)->get();
-        return view('perfil.dados', compact('user'));
+    public function VerificarUsuarios($value){
+        if ($value == "admin"){
+            $user = User::where('type', 'admin')->get();
+            $type = "Administradores";
+        }elseif($value == "inst"){
+            $user = User::where('type', 'inst')->get();
+            $type = "Instituições";
+        }elseif($value == "user"){
+            $user = User::where('type', 'user')->get();
+            $type = "Doadores";
+        }
+        return view('perfil.dados', compact('user', 'type'));
     }
 
     public function atualizar(Request $request){
@@ -115,15 +117,16 @@ class PerfilControlador extends Controller
         return redirect('home');
     }
 
-    public function alterarTipo($id){
+    public function alterarTipo($id, $value){
         $user = User::findOrFail($id);
-        if (route('alterarInst')){
-            $user->type = 'inst';
-        }elseif(route('alterarAdmin')){
+        if ($value == "admin"){
             $user->type = 'admin';
-        }elseif(route('alterarDoador')){
+        }elseif($value == "inst"){
+            $user->type = 'inst';
+        }elseif($value == "user"){
             $user->type = 'user';
         }
+        $user->save();
         return redirect()->back();
     }
     

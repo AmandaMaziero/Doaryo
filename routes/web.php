@@ -61,9 +61,7 @@ Route::get('/perfil', ["uses"=>"PerfilControlador@type"])->name('admin');
 
 Route::get('/perfil', ["uses"=>"PerfilControlador@type"])->name('inst');
 
-Route::get('/perfil/dadosDoador', ["uses"=>"PerfilControlador@VerificarDoadores"])->name('dadosDoador');
-
-Route::get('/perfil/dadosInst', ["uses"=>"PerfilControlador@VerificarInstituicoes"])->name('dadosInst');
+Route::get('/perfil/dataUsers/{value}', ["uses"=>"PerfilControlador@VerificarUsuarios"])->name('dataUsers');
 
 Route::get('/perfil/efetuada', ["uses"=>"PerfilControlador@recebidas"])->name('recebidas');
 
@@ -82,11 +80,7 @@ Route::get('perfil/{id}/destroy', function(){
 
  Route::get('perfil/excluirConta', ["uses"=>"PerfilControlador@excluirConta"])->name('excluirConta');
 
-Route::get('perfil/alterarAdmin/{id}', ["uses"=>"PerfilControlador@alterarTipo"])->name('alterarAdmin');
-
-Route::get('perfil/alterarInst/{id}', ["uses"=>"PerfilControlador@alterarTipo"])->name('alterarInst');
-
-Route::get('perfil/alterarDoador/{id}', ["uses"=>"PerfilControlador@alterarTipo"])->name('alterarDoador');
+Route::get('perfil/alterarTipo/{id}/{value}', ["uses"=>"PerfilControlador@alterarTipo"])->name('alterarTipo');
 
 //others
 Route::get('/contato', ["uses"=>"ContatoControlador@index"]);

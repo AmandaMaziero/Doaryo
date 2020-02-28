@@ -4,7 +4,7 @@
 @section('conteudo')
 
 <div class="container">
-    <h1 class='display-1 text-center'>Verificar</h1>
+    <h1 class='display-1 text-center'>Verificar {{$type}}</h1>
 </div>
 <br>
 
@@ -22,26 +22,26 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($user as $users)
                     <tr>
+                    @foreach($user as $users)
                         <td><p>{{$users->name}}</p></td>
                         <td><p>{{$users->email}}</p></td> 
                         <td><p>{{$users->type}}</p></td>
                         <td>
                             <div class="row">
                                 <div class="col">
-                                    <a href="{{ route('alterarAdmin', ['id' => $users->id]) }}" class="btn btn-dark">Administrador</a>
+                                    <a href="{{ route('alterarTipo', ['id' => $users->id, 'value' => 'admin'])}}" class="btn btn-dark">Administrador</a>
                                 </div>
                                 <div class="col">
-                                    <a href="{{ route('alterarInst', ['id' => $users->id]) }}" class="btn btn-dark">Instituição</a>
+                                    <a href="{{ route('alterarTipo', ['id' => $users->id, 'value' => 'inst'])}}" class="btn btn-dark">Instituição</a>
                                 </div>
                                 <div class="col">
-                                    <a href="{{ route('alterarDoador', ['id' => $users->id]) }}" class="btn btn-dark">Doador</a>
+                                    <a href="{{ route('alterarTipo', ['id' => $users->id, 'value' => 'user'])}}" class="btn btn-dark">Doador</a>
                                 </div>
                             </div>
                         </td>      
                     </tr>
-                @endforeach
+                    @endforeach
             </tbody>
         </table>
             
