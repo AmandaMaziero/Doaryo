@@ -58,7 +58,7 @@
         <a class="list-group-item list-group-item-action btn btn-secondary" href="{{route('cadastro')}}">Adicionar Requisição</a>
         <a class="list-group-item list-group-item-action btn btn-success" href="{{route('recebidas')}}">Doações Recebidas</a>
         <a class="list-group-item list-group-item-action btn btn-warning" href="{{route('aguardo')}}">Requisições em Espera</a>
-        <a class="list-group-item list-group-item-action btn btn-warning" href="{{route('editarinfo', 'id')}}">Editar Informações sobre a Instituição</a>
+        <a class="list-group-item list-group-item-action btn btn-warning" href="{{route('editarinfo')}}">Editar Informações sobre a Instituição</a>
     </div>
 </div>
 @endsection 

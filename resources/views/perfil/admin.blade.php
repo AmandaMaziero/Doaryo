@@ -23,7 +23,7 @@
     <div class="list-group list-group">
         <a class="list-group-item list-group-item-action btn btn-secondary" href="{{ route('dataUsers', ['value' => 'admin']) }}">Administradores</a>
         <a class="list-group-item list-group-item-action btn btn-secondary" href="{{ route('dataUsers', ['value' => 'inst']) }}">Instituições</a>
-        <a class="list-group-item list-group-item-action btn btn-secondary" href="{{ route('dataUsers', ['value' => 'doador']) }}">Doadores</a>
+        <a class="list-group-item list-group-item-action btn btn-secondary" href="{{ route('dataUsers', ['value' => 'user']) }}">Doadores</a>
         <a class="list-group-item list-group-item-action btn btn-secondary" href="{{ asset('doacao') }}">Requisições</a>
     </div>
 </div>

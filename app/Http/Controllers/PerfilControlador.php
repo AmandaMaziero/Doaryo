@@ -129,5 +129,32 @@ class PerfilControlador extends Controller
         $user->save();
         return redirect()->back();
     }
+
+    public function atualizarinfo(Request $request){
+        $id = auth()->user()->id;
+        $senha = User::where('id', $id)->get('password');
+        if (Hash::check($request['old-password'], $senha[0]->password)){
+            if($request['password'] == $request['password_confirmation']){
+                $user = User::findOrFail($request['id']);
+                $user->name = $request['name'];
+                $user->email = $request['email'];
+                $user->password = Hash::make($request['password']);
+                $user->type = $request['type'];
+                $user->save();
+                return redirect('/perfil');
+            }else{
+                return redirect()->back()->with('aviso1','Há algum erro nos dados cadastrais.');
+            }
+        }else{
+            return redirect()->back()->with('aviso2','A senha digitada não corresponde a antiga.');
+        }
+        
+    }
+
+    public function editarinfo() {
+        $id = auth()->user()->id;
+        $type = auth()->user()->type;
+        return view('perfil.editarinfo',compact('id', 'type'));
+    }
     
 }

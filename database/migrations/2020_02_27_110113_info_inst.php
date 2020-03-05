@@ -15,8 +15,8 @@ class InfoInst extends Migration
     {
         Schema::create('info_inst', function (Blueprint $table) {
             $table->increments('idInfo');
-            $table->increments('localizacao');
-            $table->increments('fundacao');
+            $table->string('localizacao');
+            $table->string('fundacao');
             $table->increments('acaosocial');
             $table->integer('idInst')->unsigned();
             $table->foreign('idInst')->references('id')->on('Requisicoes');
