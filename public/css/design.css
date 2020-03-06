@@ -12,4 +12,8 @@ h3{
     font-family: 'Trocchi', serif;  
 }
 
+input[type="file"] {
+    display: none;
+}
+
 

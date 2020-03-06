@@ -17,7 +17,8 @@ class InfoInst extends Migration
             $table->increments('idInfo');
             $table->string('localizacao');
             $table->string('fundacao');
-            $table->increments('acaosocial');
+            $table->string('acaosocial');
+            $table->string('imagem');
             $table->integer('idInst')->unsigned();
             $table->foreign('idInst')->references('id')->on('Requisicoes');
             $table->timestamps();

@@ -9,6 +9,7 @@ use App\Requisicao;
 use App\itemDoado;
 use App\Doacao;
 use App\Carrinho;
+use App\Info_Inst;
 
 class PerfilControlador extends Controller
 {   
@@ -130,24 +131,23 @@ class PerfilControlador extends Controller
         return redirect()->back();
     }
 
-    public function atualizarinfo(Request $request){
-        $id = auth()->user()->id;
-        $senha = User::where('id', $id)->get('password');
-        if (Hash::check($request['old-password'], $senha[0]->password)){
-            if($request['password'] == $request['password_confirmation']){
-                $user = User::findOrFail($request['id']);
-                $user->name = $request['name'];
-                $user->email = $request['email'];
-                $user->password = Hash::make($request['password']);
-                $user->type = $request['type'];
-                $user->save();
-                return redirect('/perfil');
-            }else{
-                return redirect()->back()->with('aviso1','Há algum erro nos dados cadastrais.');
-            }
-        }else{
-            return redirect()->back()->with('aviso2','A senha digitada não corresponde a antiga.');
+    public function atualizarinfo(Request $data){
+        if ($data->hasFile('imagem') && $data->file('imagem')->isValid()) {
+            $name = uniqid(date('HisYmd'));
+            $extension = $data->logo->extension();
+            $namefile = "{$name}.{$extension}";
+            $upload = $data->imagem->store('logo_evento');
+
+            Info_Inst::create([
+                'localizacao'=>$data['localizacao'],
+                'fundacao'=>$data['fundacao'],
+                'acaosocial'=>$data['acaosocial'],
+                'imagem'=>$upload,
+                'idInst'=>auth()->user()->id,
+            ]);
         }
+
+        return redirect('/perfil');
         
     }
 
