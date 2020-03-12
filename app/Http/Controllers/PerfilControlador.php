@@ -132,23 +132,15 @@ class PerfilControlador extends Controller
     }
 
     public function atualizarinfo(Request $data){
-        if ($data->hasFile('imagem') && $data->file('imagem')->isValid()) {
-            $name = uniqid(date('HisYmd'));
-            $extension = $data->logo->extension();
-            $namefile = "{$name}.{$extension}";
-            $upload = $data->imagem->store('logo_evento');
-
             Info_Inst::create([
                 'localizacao'=>$data['localizacao'],
                 'fundacao'=>$data['fundacao'],
                 'acaosocial'=>$data['acaosocial'],
-                'imagem'=>$upload,
+                'imagem'=>request()->file('imagem')->store('logos', 'public'),
                 'idInst'=>auth()->user()->id,
             ]);
-        }
 
-        return redirect('/perfil');
-        
+            return view('perfil');
     }
 
     public function editarinfo() {

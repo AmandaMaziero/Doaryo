@@ -75,7 +75,7 @@ Route::post('perfil/atualizar', ["uses"=>"PerfilControlador@atualizar"])->name('
 
 Route::get('perfil/editarinfo', ["uses"=>"PerfilControlador@editarinfo"])->name('editarinfo');
 
-Route::post('perfil/atualizarinfo', ["uses"=>"PerfilControlador@editarinfo"])->name('atualizarinfo');
+Route::post('perfil/atualizarinfo', ["uses"=>"PerfilControlador@atualizarinfo"])->name('atualizarinfo');
 
 Route::get('perfil/{id}/destroy', function(){
     

@@ -20,7 +20,7 @@ class InfoInst extends Migration
             $table->string('acaosocial');
             $table->string('imagem');
             $table->integer('idInst')->unsigned();
-            $table->foreign('idInst')->references('id')->on('Requisicoes');
+            $table->foreign('idInst')->references('id')->on('users');
             $table->timestamps();
         });
     }
